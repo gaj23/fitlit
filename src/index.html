@@ -7,21 +7,51 @@
 </head>
 
 <body>
-  <h1>Hi, User. Welcome!</h1>
-  <h2>Today is: <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22"></h2>
 
-  <section class="summary">
+  <section class="summary-view">
+    <h1>Hi, User. Welcome!</h1>
+    <h2>Today is: <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22"></h2>
+
     <h4>Hydration</h4>
     <h3 id="hydration-data">data</h3>
-    <img src="" alt="" id="hyrdration-image">
+    <img src="" alt="" id="hydration-image">
 
     <h4>Sleep</h4>
     <h3 id="sleep-data">data</h3>
     <img src="" alt="" id="sleep-image">
 
     <h4>Activity</h4>
-    <h3 id="activity-data">data</h3>
+    <h3 id="activity-data">user data/avg total users data</h3>
     <img src="" alt="" id="activity-image">
+
+  </section>
+
+  <section class="detailed-view">
+    <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+    <!-- hydration -->
+    <!-- weekly graph -->
+  </section>
+
+  <section class="detailed-view">
+    <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+    <!-- Sleep -->
+    <!-- weekly graph -->
+    <!-- recent day hours slept & quality -->
+    <!-- all time avg of hours slept & quality -->
+  </section>
+
+  <section class="detailed-view">
+    <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+    <!-- activity -->
+    <!-- weekly graph steps-->
+    <!-- recent day steps -->
+    <!-- weekly graph minutes active-->
+    <!-- recent day minutes active -->
+    <!-- recent day mileage (stepcount based) -->
+    <!-- recent day steps user/all users -->
+    <!-- recent day minutes acitive user/all users-->
+    <!-- weekly graph flight-->
+    <!-- recent day flights of stairs user/all users -->
   </section>
 
   <script type="text/javascript" src="../data/users.js"></script>
