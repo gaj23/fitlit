@@ -24,33 +24,45 @@
     <h3 id="activity-data">user data/avg total users data</h3>
     <img src="" alt="" id="activity-image">
 
+    <h5>Friends</h5>
+    <!-- div or article? probably div. -->
+
   </section>
 
-  <section class="detailed-view">
+  <!-- detailed views below -->
+
+  <section class="detailed-view hidden" id="hydration-details">
     <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
-    <!-- hydration -->
+    <h4>Hydration</h4>
+    <h3>Intake: <span class="day-water-intake">0</span> oz</h3>
     <!-- weekly graph -->
+    <p>Have a headache? Try drinking some water! You might be dehydrated.</p>
   </section>
 
-  <section class="detailed-view">
+  <section class="detailed-view hidden" id="sleep-details">
     <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
-    <!-- Sleep -->
+    <h4>Sleep</h4>
+    <h3>Total: <span class="day-hours-slept">0</span> hours</h3>
+    <h3>Quality: <span class="day-sleep-quality">10</span></h3>
     <!-- weekly graph -->
-    <!-- recent day hours slept & quality -->
-    <!-- all time avg of hours slept & quality -->
+    <h5>All Time Averages:</h5>
+    <h6>Hours Slept: <span class="all-time-hours-slept">0</span> hours</h6>
+    <h6>Sleep Quality: <span class="all-time-sleep-quality">10</span> </h6>
   </section>
 
-  <section class="detailed-view">
+  <section class="detailed-view hidden" id="activity-details">
     <input type="date" id="day" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
-    <!-- activity -->
+    <h4>Activty</h4>
+    <h3>Steps Taken: <span class="day-steps">4444</span></h3>
     <!-- weekly graph steps-->
-    <!-- recent day steps -->
-    <!-- weekly graph minutes active-->
-    <!-- recent day minutes active -->
-    <!-- recent day mileage (stepcount based) -->
+    <h5>Mileage: <span class="day-miles">.2</span> </h5>
+    <h5>How you stack up: <span class="day-steps"></span>/<span class="users-average-steps"></span> steps</h5>
     <!-- recent day steps user/all users -->
+    <!-- weekly graph minutes active-->
+    <h5>How you stack up: <span class="day-activity"></span>/<span class="users-average-activity"></span> minutes</h5>
     <!-- recent day minutes acitive user/all users-->
     <!-- weekly graph flight-->
+    <h5>How you stack up: <span class="day-flights"></span>/<span class="users-average-flights"></span> flights</h5>
     <!-- recent day flights of stairs user/all users -->
   </section>
 
