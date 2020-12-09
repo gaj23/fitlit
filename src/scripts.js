@@ -1,5 +1,8 @@
 let userName = document.querySelector('.greeting');
 let stepGoalComparison = document.querySelector('.step-goal-comparison');
+let summaryHydrationData = document.querySelector('.hydration-data-js');
+let summarySleepData = document.querySelector('.sleep-data-js');
+let summaryActivityData = document.querySelector('.activity-data-js');
 
 const allUser = new UserRepository(userData);
 let user = new User(allUser.getUser(12));
