@@ -14,7 +14,7 @@ const userData = [
   },
   {
     "id": 2,
-    "name": "Ron Weasly,
+    "name": "Ron Weasly",
     "address": "The Burrows",
     "email": "ronweasly@hogwarts.com",
     "strideLength": 5.2,
