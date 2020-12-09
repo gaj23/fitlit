@@ -2,4 +2,10 @@ let userName = document.querySelector('.greeting');
 
 const allUser = new UserRepository(userData);
 let user = new User(allUser.getUser(12));
-console.log(`Welcome ${user.name}!`)
+
+window.addEventListener('load', greetUser);
+
+function greetUser() {
+  console.log(user)
+  userName.innerText = `Welcome, ${user.returnFirstName()}!`
+}
