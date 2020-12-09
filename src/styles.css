@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  /* border: 2px solid yellow; */
+  color: #fff;
+  background-color: #000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+  padding: 4%;
+}
+
+h2, .calendar {
+  font-size: 3rem;
+  padding: 2%;
+  margin-left: 2%;
+}
+
+.calendar {
+  border: 1px solid #fff;
+  background-color: #2f2f2f;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+/* General Summary Formatting */
+.title-data {
+  padding-left: 10%;
+}
+
+.hydration-summary, .sleep-summary, .activity-summary {
+  height: 20rem;
+  margin: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+  padding: 2%;
+  margin: 8%;
+  border-radius: 10%;
+  width: 25%
+}
+
+/* Hydration Summary */
+.hydration-data {
+  color: #56B4E9;
+}
+
+.hydration-summary>img {
+  background-color: #56B4E9;
+}
+
+/* Sleep Summary */
+.sleep-data {
+  color: #CC79A7;
+}
+
+.sleep-summary>img {
+  background-color: #CC79A7;
+}
+
+/* Activity Summary */
+.activity-data {
+  color: #E69F00;
+}
+
+.activity-summary>img {
+  background-color: #E69F00;
+}
+
+.hidden {
+  display: none !important;
+}
