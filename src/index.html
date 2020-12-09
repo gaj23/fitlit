@@ -1,16 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Activity Tracker</title>
-  </head>
-  <body>
-    <h1>Activity Tracker</h1>
 
-    <script type="text/javascript" src="../data/users.js"></script>
-    <script type="text/javascript" src="../data/hydration.js"></script>
-    <script type="text/javascript" src="../data/sleep.js"></script>
-    <script type="text/javascript" src="../data/activity.js"></script>
-    <script type="text/javascript" src="./scripts.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="summary-view">
+    <h1>Welcome, User!</h1>
+    <h2>Today is: <input type="date" id="day" class="calendar" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22"></h2>
+    <div class="hydration-summary">
+      <div class="title-data">
+        <h4>Hydration</h4>
+        <h3 id="hydration-data" class="hydration-data">data</h3>
+      </div>
+      <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
+    </div>
+    <div class="sleep-summary">
+      <div class="title-data">
+        <h4>Sleep</h4>
+        <h3 id="sleep-data" class="sleep-data">data</h3>
+      </div>
+      <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image">
+    </div>
+    <div class="activity-summary">
+      <div class="title-data">
+        <h4>Activity</h4>
+        <h3 id="activity-data" class="activity-data">user data/avg total users data</h3>
+      </div>
+      <img src="../assets/activity.png" alt="activity icon" id="activity-image">
+    </div>
+  </section>
+
+  <!-- detailed views below -->
+  <input type="date" id="day" class="detailed-calendar hidden" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+  <section class="hydration-detailed-view hidden" id="hydration-details">
+    <h4>Hydration</h4>
+    <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
+    <h3>Intake: <span class="day-water-intake">0</span> oz</h3>
+    <h4>Intake over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
+    <p>Have a headache? Try drinking some water! You might be dehydrated.</p>
+  </section>
+
+  <section class="sleep-detailed-view hidden" id="sleep-details">
+    <h4>Sleep</h4>
+    <h3>Total: <span class="day-hours-slept">0</span> hours</h3>
+    <h3>Quality: <span class="day-sleep-quality">10</span></h3>
+    <h4>Hours slept over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
+    <h5>All Time Averages:</h5>
+    <h6>Hours Slept: <span class="all-time-hours-slept">0</span> hours</h6>
+    <h6>Sleep Quality: <span class="all-time-sleep-quality">10</span> </h6>
+  </section>
+
+  <section class="actiivty-detailed-view hidden" id="activity-details">
+    <h4>Activity</h4>
+    <h3>Steps Taken: <span class="day-steps">4444</span></h3>
+    <h4>Steps over the last 7 days: <span class="weekly-steps">4444, 2, 3, 4, 5, 6, 7</span> </h4>
+    <h5>Mileage: <span class="day-miles">.2</span> </h5>
+    <h5>How you stack up: <span class="day-steps"></span>/<span class="users-average-steps"></span> steps</h5>
+
+    <h4>Active minutes over the last 7 days: <span class="weekly-active-minutes">40, 2, 3, 4, 5, 6, 7</span> </h4>
+    <h5>How you stack up: <span class="day-activity"></span>/<span class="users-average-activity"></span> minutes</h5>
+
+    <h4>Flights climbed over the last 7 days: <span class="weekly-flights">4444, 2, 3, 4, 5, 6, 7</span> </h4>
+    <h5>How you stack up: <span class="day-flights"></span>/<span class="users-average-flights"></span> flights</h5>
+  </section>
+
+  <script type="text/javascript" src="../data/users.js"></script>
+  <script type="text/javascript" src="../data/hydration.js"></script>
+  <script type="text/javascript" src="../data/sleep.js"></script>
+  <script type="text/javascript" src="../data/activity.js"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+</body>
+
 </html>
