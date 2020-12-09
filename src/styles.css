@@ -5,7 +5,6 @@
   color: #fff;
   background-color: #000;
   font-family: 'Open Sans', sans-serif;
-  overflow: scroll;
 }
 
 body {
@@ -37,6 +36,10 @@ h4 {
 }
 
 /* General Summary Formatting */
+.title-data {
+  padding-left: 10%;
+}
+
 .hydration-summary, .sleep-summary, .activity-summary {
   height: 20rem;
   margin: 2%;
@@ -45,8 +48,11 @@ h4 {
   align-items: center;
 }
 
-.title-data {
-  padding-left: 10%;
+.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+  padding: 2%;
+  margin: 8%;
+  border-radius: 10%;
+  width: 25%
 }
 
 /* Hydration Summary */
@@ -74,18 +80,6 @@ h4 {
 
 .activity-summary>img {
   background-color: #E69F00;
-  width: 33%;
-}
-
-/* Summary Images Styling */
-.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
-  padding: 2%;
-  margin: 8%;
-  border-radius: 10%;
-}
-
-.hydration-summary>img, .sleep-summary>img {
-  width: 25%;
 }
 
 .hidden {
