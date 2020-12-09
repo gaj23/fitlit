@@ -1,1 +1,1 @@
-console.log("Hello World");
+let userName = document.querySelector('.greeting');
