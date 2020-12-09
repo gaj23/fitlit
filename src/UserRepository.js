@@ -1,13 +1,23 @@
 class UserRepository {
   constructor(data) {
-    this.users = data;
+    this.usersData = data;
   }
 
-  getUser = (id) => {
-    return this.users.find(obj => {
-      return obj.id === id;
+  getUser(id) {
+    return this.usersData.find(user => {
+      if (user.id === id) {
+        return user;
+      }
     });
   }
+
+  calculateAvgStepGoal() {
+      let avgStepGoals = this.usersData.reduce((acc, user) => {
+        acc += user.dailyStepGoal;
+        return acc;
+      }, 0);
+      return avgStepGoals / this.usersData.length;
+    }
 }
 
 
