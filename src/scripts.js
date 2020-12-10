@@ -24,3 +24,9 @@ function compareStepGoals() {
   stepGoalComparison.innerText = ` Your step goal is: ${userGoal}. Across all users the average step goal is: ${avgGoal}.`;
 }
 
+// function getUserSummaryData() {
+//   summaryHydrationData.innerText = `${}`
+//   summarySleepData.innerText = `${}`
+//   summaryActivityData.innerText = `${}`
+// }
+
