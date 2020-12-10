@@ -14,4 +14,7 @@ class User {
     return splitName[0];
   }
 }
-module.exports = User;
+
+if (typeof module !== "undefined") {
+  module.exports = User;
+}

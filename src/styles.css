@@ -55,6 +55,10 @@ h4 {
   width: 25%
 }
 
+p {
+  font-size: 1.7rem;
+}
+
 /* Hydration Summary */
 .hydration-data {
   color: #56B4E9;
