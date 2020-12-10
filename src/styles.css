@@ -94,6 +94,11 @@ p {
 .weekly-intake {
   display: flex;
   flex-direction: column;
+  margin: 5% 5%;
+}
+
+.weekly-intake>span {
+  color: #56B4E9;
 }
 
 /* Sleep Summary */
