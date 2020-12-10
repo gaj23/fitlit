@@ -91,6 +91,11 @@ p {
   background-color: #56B4E9;
 }
 
+.weekly-intake {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Sleep Summary */
 .sleep-data {
   color: #CC79A7;

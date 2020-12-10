@@ -1,16 +1,16 @@
-let userName = document.querySelector('.greeting');
-let stepGoalComparison = document.querySelector('.step-goal-comparison');
-let summaryPage = document.querySelector('.summary-view-js');
-let summaryHydrationData = document.querySelector('.hydration-data-js');
-let summarySleepData = document.querySelector('.sleep-data-js');
-let summaryActivityData = document.querySelector('.activity-data-js');
-let hydrationPage = document.querySelector('.hydration-detailed-view-js');
-let hydrationImg = document.querySelector('#hydration-image');
-let hydrationImgDetailed = document.querySelector('#hydration-image-detailed');
-let calendar = document.querySelector('.detailed-calendar');
+const userName = document.querySelector('.greeting');
+const stepGoalComparison = document.querySelector('.step-goal-comparison');
+const summaryPage = document.querySelector('.summary-view-js');
+const summaryHydrationData = document.querySelector('.hydration-data-js');
+const summarySleepData = document.querySelector('.sleep-data-js');
+const summaryActivityData = document.querySelector('.activity-data-js');
+const hydrationPage = document.querySelector('.hydration-detailed-view-js');
+const hydrationImg = document.querySelector('#hydration-image');
+const hydrationImgDetailed = document.querySelector('#hydration-image-detailed');
+const calendar = document.querySelector('.detailed-calendar');
 
 const allUser = new UserRepository(userData);
-let user = new User(allUser.getUser(12));
+const user = new User(allUser.getUser(12));
 
 window.addEventListener('load', displaySummaryData);
 hydrationImg.addEventListener('click', displayHydrationPage);
