@@ -28,9 +28,15 @@ h2, .calendar {
 }
 
 .detailed-calendar {
-  border: 1px solid #fff;
   background-color: #2f2f2f;
-  font-size: 3rem;
+}
+
+.detailed-calendar-style {
+  background-color: #2f2f2f;
+  font-size: 4rem;
+  margin-left: 24%;
+  padding: 2%;
+  border: none;
 }
 
 h3 {
