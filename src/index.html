@@ -40,15 +40,18 @@
   <!-- detailed views below -->
   <input type="date" id="day" class="detailed-calendar hidden" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
   <section class="hydration-detailed-view hydration-detailed-view-js hidden">
-    <h4>Hydration</h4>
-    <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
-    <h3>Intake: <span class="day-water-intake">0</span> oz</h3>
-    <h4>Intake over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
+    <div class="hydration-summary">
+      <h5 class="hydration-data">Hydration Stats</h5>
+      <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image-detailed">
+    </div>
+    <h6>Intake: <span class="day-water-intake">0</span> oz</h6>
+    <h6>Intake over the last 7 days: <span class="weekly-intake">0, 
+      2, 3, 4, 5, 6, 7</span> </h6>
     <p>Have a headache? Try drinking some water! You might be dehydrated.</p>
   </section>
 
   <section class="sleep-detailed-view hidden" id="sleep-details">
-    <h4>Sleep</h4>
+    <h5>Sleep</h5>
     <h3>Total: <span class="day-hours-slept">0</span> hours</h3>
     <h3>Quality: <span class="day-sleep-quality">10</span></h3>
     <h4>Hours slept over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
@@ -58,7 +61,7 @@
   </section>
 
   <section class="actiivty-detailed-view hidden" id="activity-details">
-    <h4>Activity</h4>
+    <h5>Activity</h5>
     <h3>Steps Taken: <span class="day-steps">4444</span></h3>
     <h4>Steps over the last 7 days: <span class="weekly-steps">4444, 2, 3, 4, 5, 6, 7</span> </h4>
     <h5>Mileage: <span class="day-miles">.2</span> </h5>

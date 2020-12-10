@@ -5,13 +5,16 @@ let summaryHydrationData = document.querySelector('.hydration-data-js');
 let summarySleepData = document.querySelector('.sleep-data-js');
 let summaryActivityData = document.querySelector('.activity-data-js');
 let hydrationPage = document.querySelector('.hydration-detailed-view-js');
-let hydrationImg = document.querySelector('#hydration-image')
+let hydrationImg = document.querySelector('#hydration-image');
+let hydrationImgDetailed = document.querySelector('#hydration-image-detailed');
+let calendar = document.querySelector('.detailed-calendar');
 
 const allUser = new UserRepository(userData);
 let user = new User(allUser.getUser(12));
 
 window.addEventListener('load', displaySummaryData);
 hydrationImg.addEventListener('click', displayHydrationPage);
+hydrationImgDetailed.addEventListener('click', displayHydrationPage);
 
 function displaySummaryData() {
   greetUser();
@@ -35,10 +38,11 @@ function compareStepGoals() {
 // }
 
 function displayHydrationPage() {
-   togglePages(summaryPage, hydrationPage)
+   togglePages(summaryPage, hydrationPage, calendar);
 }
 
-function togglePages(pageOne, pageTwo) {
+function togglePages(pageOne, pageTwo, pageThree) {
   pageOne.classList.toggle('hidden');
   pageTwo.classList.toggle('hidden');
+  pageThree.classList.toggle('hidden');
 }
