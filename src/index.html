@@ -10,7 +10,7 @@
 
 <body>
 
-  <section class="summary-view">
+  <section class="summary-view summary-view-js">
     <h1 class="greeting">Welcome, User!</h1>
     <h2>Today is: <input type="date" id="day" class="calendar" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22"></h2>
     <div class="hydration-summary">
@@ -38,17 +38,35 @@
   </section>
 
   <!-- detailed views below -->
-  <input type="date" id="day" class="detailed-calendar hidden" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
-  <section class="hydration-detailed-view hidden" id="hydration-details">
-    <h4>Hydration</h4>
-    <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
-    <h3>Intake: <span class="day-water-intake">0</span> oz</h3>
-    <h4>Intake over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
-    <p>Have a headache? Try drinking some water! You might be dehydrated.</p>
+  <div class="detailed-calendar hidden">
+    <input type="date" id="day" class="detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+  </div>
+  <section class="hydration-detailed-view hydration-detailed-view-js hidden">
+    <div class="hydration-summary">
+      <h5 class="hydration-data">Hydration Stats</h5>
+      <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image-detailed">
+    </div>
+    <h6 class="weekly-intake">Today's Intake: 
+      <span>0 oz</span>
+    </h6>
+    <h6>Intake over the last 7 days: 
+      <div class="weekly-intake weekly-intake-js">
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div> 
+    </h6>
+    <h6 class="weekly-intake">On average this is how much your drink per day:
+      <span>0 oz</span>
+    </h6>
   </section>
 
   <section class="sleep-detailed-view hidden" id="sleep-details">
-    <h4>Sleep</h4>
+    <h5>Sleep</h5>
     <h3>Total: <span class="day-hours-slept">0</span> hours</h3>
     <h3>Quality: <span class="day-sleep-quality">10</span></h3>
     <h4>Hours slept over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
@@ -58,7 +76,7 @@
   </section>
 
   <section class="actiivty-detailed-view hidden" id="activity-details">
-    <h4>Activity</h4>
+    <h5>Activity</h5>
     <h3>Steps Taken: <span class="day-steps">4444</span></h3>
     <h4>Steps over the last 7 days: <span class="weekly-steps">4444, 2, 3, 4, 5, 6, 7</span> </h4>
     <h5>Mileage: <span class="day-miles">.2</span> </h5>
