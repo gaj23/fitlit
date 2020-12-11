@@ -4,63 +4,75 @@ const expect = chai.expect;
 const Hydration = require('../src/Hydration');
 const User = require('../src/User');
 const userData = require('./test-data/user-test-data');
-//an array of various users
 const hydrationData = require('./test-data/hydration-test-data');
-//this is an array of objects with ids to mark who owns what.
 
 describe('Hydration', () => {
   let hydration, user;
   beforeEach(() => {
-    hydration = new Hydration();
     user = new User(userData[2]);
+    hydration = new Hydration(hydrationData);
   });
 
-  it('', () => {
+  it('should return a specific users hydration data', () => {
+    expect(hydration.getUserHydrationData(3)).to.deep.equal([{
+        userID: 3,
+        date: '2019/06/15',
+        numOunces: 47
+      },
+      {
+        userID: 3,
+        date: '2019/06/16',
+        numOunces: 99
+      },
+      {
+        userID: 3,
+        date: '2019/06/17',
+        numOunces: 28
+      },
+      {
+        userID: 3,
+        date: '2019/06/18',
+        numOunces: 40
+      },
+      {
+        userID: 3,
+        date: '2019/06/19',
+        numOunces: 85
+      },
+      {
+        userID: 3,
+        date: '2019/06/20',
+        numOunces: 51
+      },
+      {
+        userID: 3,
+        date: '2019/06/21',
+        numOunces: 41
+      },
+      {
+        userID: 3,
+        date: '2019/06/22',
+        numOunces: 78
+      },
+      {
+        userID: 3,
+        date: '2019/06/23',
+        numOunces: 35
+      }
+    ]);
 
   })
 
-  it('', () => {
-
+  it('should calculate all time intake average', () => {
+    expect(hydration.calculateDailyAvgIntake(3)).to.equal(56);
   })
 
-  it('', () => {
-
+  it('should return a daily intake', () => {
+    expect(hydration.findDailyIntake("2019/06/15", 3)).to.equal(47)
   })
 
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
-  })
-
-  it('', () => {
-
+  it('should return intake for each day over the course of a week', () => {
+    expect(hydration.getWeeklyIntake("2019/06/16", 3)).to.deep.equal([47, 99, 28, 40, 85, 51, 41])
   })
 
 })
