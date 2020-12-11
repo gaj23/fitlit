@@ -5,23 +5,24 @@ class Hydration {
   }
 
   getUserHydrationData(id) {
-    return this.data.filter(data =>
-      data.userID === id)
+    this.userHydrationData = this.data.filter(data => {
+      return data.userID === id
+    })
   }
 
   calculateDailyAvgIntake(id) {
-    return this.getUserHydrationData(id).reduce((acc, user) => {
+    return this.userHydrationData.reduce((acc, user) => {
       acc += user.numOunces;
       return acc
-    }, 0) / this.getUserHydrationData(id).length
+    }, 0) / this.userHydrationData.length
   }
 
   findDailyIntake(date, id) {
-    return this.getUserHydrationData(id).find(day => day.date === date).numOunces;
+    return this.userHydrationData.find(day => day.date === date).numOunces;
   }
 
   getWeeklyIntake(date, id) {
-    return this.getUserHydrationData(id).slice(date, 7).map(user => {
+    return this.userHydrationData.slice(date, 7).map(user => {
       return user.numOunces;
     })
   }
