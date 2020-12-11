@@ -11,10 +11,11 @@ describe('Hydration', () => {
   beforeEach(() => {
     user = new User(userData[2]);
     hydration = new Hydration(hydrationData);
+    hydration.getUserHydrationData(3);
   });
 
   it('should return a specific users hydration data', () => {
-    expect(hydration.getUserHydrationData(3)).to.deep.equal([{
+    expect(hydration.userHydrationData).to.deep.equal([{
         userID: 3,
         date: '2019/06/15',
         numOunces: 47
