@@ -2,14 +2,11 @@ const chai = require("chai");
 const expect = chai.expect;
 
 const Hydration = require('../src/Hydration');
-const User = require('../src/User');
-const userData = require('./test-data/user-test-data');
 const hydrationData = require('./test-data/hydration-test-data');
 
 describe('Hydration', () => {
-  let hydration, user;
+  let hydration;
   beforeEach(() => {
-    user = new User(userData[2]);
     hydration = new Hydration(hydrationData);
     hydration.getUserHydrationData(3);
   });
