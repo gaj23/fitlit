@@ -8,9 +8,13 @@ const hydrationPage = document.querySelector('.hydration-detailed-view-js');
 const hydrationImg = document.querySelector('#hydration-image');
 const hydrationImgDetailed = document.querySelector('#hydration-image-detailed');
 const calendar = document.querySelector('.detailed-calendar');
+const detailedHydrationData = document.querySelector('.detailed-hydration-data-js');
+const weeklyHydrationData = document.querySelector('.weekly-intake-js');
+const avgHydrationIntakeData = document.querySelector('.avg-intake-js');
 
 const allUser = new UserRepository(userData);
 const user = new User(allUser.getUser(12));
+const hydrationStats = new Hydration(hydrationData);
 
 window.addEventListener('load', displaySummaryData);
 hydrationImg.addEventListener('click', displayHydrationPage);
@@ -19,6 +23,7 @@ hydrationImgDetailed.addEventListener('click', displayHydrationPage);
 function displaySummaryData() {
   greetUser();
   compareStepGoals();
+  getUserSummaryData();
 }
 
 function greetUser() {
@@ -31,14 +36,27 @@ function compareStepGoals() {
   stepGoalComparison.innerText = ` Your step goal is: ${userGoal}. Across all users the average step goal is: ${avgGoal}.`;
 }
 
-// function getUserSummaryData() {
-//   summaryHydrationData.innerText = `${}`
-//   summarySleepData.innerText = `${}`
-//   summaryActivityData.innerText = `${}`
-// }
+function getUserSummaryData() {
+  hydrationStats.getUserHydrationData(12);
+  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
+  // summarySleepData.innerText = `${}`
+  // summaryActivityData.innerText = `${}`
+}
 
 function displayHydrationPage() {
    togglePages(summaryPage, hydrationPage, calendar);
+   hydrationStats.getUserHydrationData(12);
+   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
+   weeklyHydrationData.innerHTML = `
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[0]}</span>
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[1]}</span>
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[2]}</span>
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[3]}</span>
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[4]}</span>
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[5]}</span>
+   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[6]}</span>
+  `;
+  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake()} oz`;
 }
 
 function togglePages(pageOne, pageTwo, pageThree) {
