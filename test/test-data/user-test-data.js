@@ -1,5 +1,4 @@
-const userData = [
-  {
+const userData = [{
     "id": 1,
     "name": "Harry Potter",
     "address": "4 Privet Drive, Little Whinging, Surrey, England, Great Britain",
