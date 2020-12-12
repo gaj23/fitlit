@@ -1,3 +1,5 @@
+// const helper = require('./helper');
+
 class Hydration {
   constructor(hydrationData) {
     this.hydrationData = hydrationData;

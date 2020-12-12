@@ -3,12 +3,13 @@ const expect = chai.expect;
 
 const Hydration = require('../src/Hydration');
 const hydrationData = require('./test-data/hydration-test-data');
+const helper = require('../src/helper');
 
 describe('Hydration', () => {
   let hydration;
   beforeEach(() => {
     hydration = new Hydration(hydrationData);
-    hydration.getUserHydrationData(3);
+    helper.getUserData(hydrationData, 3);
   });
 
   it('should return a specific users hydration data', () => {

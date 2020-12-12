@@ -2,7 +2,6 @@ const helper = {
   getUserData: (userData, id) => {
     return userData.filter(data => data.userID === id);
   },
-
 }
 
 
