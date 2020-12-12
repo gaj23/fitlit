@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8x">
   <title>Activity Tracker</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -46,11 +46,11 @@
       <h5 class="hydration-data">Hydration Stats</h5>
       <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image-detailed">
     </div>
-    <h6 class="weekly-intake">Today's Intake: 
-      <span class="detailed-hydration-data-js">0 oz</span>
+    <h6>Daily Intake:
+      <span class="detailed-hydration detailed-hydration-data-js">0 oz</span>
     </h6>
-    <h6>Intake over the last 7 days: 
-      <div class="weekly-intake weekly-intake-js">
+    <h6>Intake over the last 7 days:
+      <div class="detailed-hydration weekly-intake-js">
         <span>0</span>
         <span>1</span>
         <span>2</span>
@@ -58,24 +58,45 @@
         <span>4</span>
         <span>5</span>
         <span>6</span>
-      </div> 
+      </div>
     </h6>
-    <h6 class="weekly-intake">On average this is how much your drink per day:
-      <span class="avg-intake-js">0 oz</span>
+    <h6>Every day on average you drink:
+      <span class="detailed-hydration avg-intake-js">0 oz</span>
     </h6>
   </section>
 
-  <section class="sleep-detailed-view hidden" id="sleep-details">
-    <h5>Sleep</h5>
-    <h3>Total: <span class="day-hours-slept">0</span> hours</h3>
-    <h3>Quality: <span class="day-sleep-quality">10</span></h3>
-    <h4>Hours slept over the last 7 days: <span class="weekly-steps">0, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>All Time Averages:</h5>
-    <h6>Hours Slept: <span class="all-time-hours-slept">0</span> hours</h6>
-    <h6>Sleep Quality: <span class="all-time-sleep-quality">10</span> </h6>
+  <section class="sleep-detailed-view sleep-detailed-view-js hidden">
+    <div class="sleep-summary">
+      <h5 class="sleep-data">Sleep Stats</h5>
+      <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image-detailed">
+    </div>
+    <h6>Hours Slept:
+      <span class="detailed-sleep day-hours-slept-js">0</span>
+    </h6>
+    <h6>Sleep Quality:
+      <span class="detailed-sleep day-sleep-quality-js">10</span>
+    </h6>
+    <h6>Hours slept over the last 7 days:
+      <div class="detailed-sleep weekly-hours-slept-js">
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div>
+    </h6>
+    <h6>All Time Averages:</h6>
+    <h6>Hours Slept:
+      <span class="detailed-sleep all-time-hours-slept-js">0</span>
+    </h6>
+    <h6>Sleep Quality:
+      <span class="detailed-sleep all-time-sleep-quality-js">10</span>
+    </h6>
   </section>
 
-  <section class="actiivty-detailed-view hidden" id="activity-details">
+  <section class="activity-detailed-view hidden" id="activity-details">
     <h5>Activity</h5>
     <h3>Steps Taken: <span class="day-steps">4444</span></h3>
     <h4>Steps over the last 7 days: <span class="weekly-steps">4444, 2, 3, 4, 5, 6, 7</span> </h4>
