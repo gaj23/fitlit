@@ -9,6 +9,7 @@ describe('Sleep', () => {
   let sleep;
   beforeEach(() => {
     sleep = new Sleep(sleepData);
+    helper.getUserData(sleepData, 2);
   });
 
   it.only('should be an instance of sleep', () => {
@@ -16,6 +17,27 @@ describe('Sleep', () => {
   });
 
   it.only('should return a specific users sleep data', () => {
-    except(sleep.getUsersSleepData()).to.deep.equal([{}])
+    expect(sleep.getUsersSleepData(2)).to.deep.equal([
+      {
+        "userID": 2,
+        "date": "2019/06/15",
+        "hoursSlept": 7,
+        "sleepQuality": 4.7
+      },
+      {
+        "userID": 2,
+        "date": "2019/06/16",
+        "numOunces": 91
+      },
+      {
+        "userID": 2,
+        "date": "2019/06/17",
+        "numOunces": 96
+      },
+    ]);
   });
-})
+
+  it.only('should calculate all time average number of hours slept per day', () => {
+    expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal();
+  })
+});

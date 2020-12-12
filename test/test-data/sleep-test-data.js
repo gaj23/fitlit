@@ -32,53 +32,63 @@ const userSleep = [
   {
     "userID": 1,
     "date": "2019/06/16",
-    "numOunces": 69
+    "hoursSlept": 4.1,
+    "sleepQuality": 3.8
   },
   {
     "userID": 2,
     "date": "2019/06/16",
-    "numOunces": 91
+    "hoursSlept": 7.5,
+    "sleepQuality": 3.8
   },
   {
     "userID": 3,
     "date": "2019/06/16",
-    "numOunces": 99
+    "hoursSlept": 10.7,
+    "sleepQuality": 3.4
   },
   {
     "userID": 4,
     "date": "2019/06/16",
-    "numOunces": 95
+    "hoursSlept": 8.3,
+    "sleepQuality": 4.5
   },
   {
     "userID": 5,
     "date": "2019/06/16",
-    "numOunces": 79
+    "hoursSlept": 7.4,
+    "sleepQuality": 2.4
   },
   {
     "userID": 1,
     "date": "2019/06/17",
-    "numOunces": 96
+    "hoursSlept": 8,
+    "sleepQuality": 2.6
   },
   {
     "userID": 2,
     "date": "2019/06/17",
-    "numOunces": 96
+    "hoursSlept": 5.7,
+    "sleepQuality": 3
   },
   {
     "userID": 3,
     "date": "2019/06/17",
-    "numOunces": 28
+    "hoursSlept": 5.3,
+    "sleepQuality": 4.9
   },
   {
     "userID": 4,
     "date": "2019/06/17",
-    "numOunces": 82
+    "hoursSlept": 5.7,
+    "sleepQuality": 1.1
   },
   {
     "userID": 5,
     "date": "2019/06/17",
-    "numOunces": 99
-  },
+    "hoursSlept": 10.5,
+    "sleepQuality": 3.7
+  }
 ]
 
 module.exports = userSleep;
