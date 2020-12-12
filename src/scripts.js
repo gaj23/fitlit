@@ -37,26 +37,36 @@ function compareStepGoals() {
 }
 
 function getUserSummaryData() {
-  hydrationStats.getUserHydrationData(12);
-  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
+  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
   // summarySleepData.innerText = `${}`
   // summaryActivityData.innerText = `${}`
 }
 
 function displayHydrationPage() {
    togglePages(summaryPage, hydrationPage, calendar);
-   hydrationStats.getUserHydrationData(12);
-   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
-   weeklyHydrationData.innerHTML = `
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[0]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[1]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[2]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[3]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[4]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[5]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15')[6]}</span>
-  `;
-  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake()} oz`;
+   displayDailyIntake();
+   displayWeeklyIntake();
+   displayAvgIntake();
+}
+
+function displayDailyIntake() {
+  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
+}
+
+function displayWeeklyIntake() {
+  weeklyHydrationData.innerHTML = `
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[0]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[1]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[2]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[3]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[4]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[5]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[6]}</span>
+ `;
+}
+
+function displayAvgIntake() {
+  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
 }
 
 function togglePages(pageOne, pageTwo, pageThree) {
