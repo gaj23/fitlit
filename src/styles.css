@@ -67,7 +67,7 @@ h6 {
 }
 
 /* Hydration Summary */
-.hydration-data {
+.hydration-data, .detailed-hydration, .detailed-hydration>span {
   color: #56B4E9;
 }
 
@@ -76,7 +76,7 @@ h6 {
 }
 
 /* Sleep Summary */
-.sleep-data {
+.sleep-data, .detailed-sleep, .detailed-sleep>span {
   color: #CC79A7;
 }
 
@@ -106,18 +106,18 @@ h6 {
   border: none;
 }
 
-/* Hydration Detailed */
-.weekly-intake {
+/* General Detailed Styling */
+.detailed-hydration, .detailed-sleep {
   display: flex;
   flex-direction: column;
   margin: 5% 5%;
 }
 
-.weekly-intake>span {
+/* Hydration Detailed */
+.detailed-hydration>span {
   color: #56B4E9;
 }
 
-/* Sleep Detailed */
 .hidden {
   display: none !important;
 }
