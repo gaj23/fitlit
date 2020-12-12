@@ -106,16 +106,15 @@ h6 {
   border: none;
 }
 
-/* General Detailed Styling */
+/* Detailed Styling */
 .detailed-hydration, .detailed-sleep {
   display: flex;
   flex-direction: column;
   margin: 5% 5%;
 }
 
-/* Hydration Detailed */
-.detailed-hydration>span {
-  color: #56B4E9;
+.sleep-data {
+  margin-left: 9%;
 }
 
 .hidden {
