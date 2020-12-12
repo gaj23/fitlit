@@ -56,8 +56,8 @@ function displayHydrationPage() {
    <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[5]}</span>
    <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[6]}</span>
   `;
-  
-  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake()} oz`;
+
+  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
 }
 
 function togglePages(pageOne, pageTwo, pageThree) {

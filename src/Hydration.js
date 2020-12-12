@@ -7,11 +7,11 @@ class Hydration {
     return helper.getUserData(this.hydrationData, id);
   }
 
-  calculateDailyAvgIntake() {
-    return this.getUserHydrationData(this.hydrationData).reduce((acc, user) => {
+  calculateDailyAvgIntake(id) {
+    return this.getUserHydrationData(id).reduce((acc, user) => {
       acc += user.numOunces;
       return acc
-    }, 0) / this.getUserHydrationData(this.hydrationData).length
+    }, 0) / this.getUserHydrationData(id).length
   }
 
   findDailyIntake(date, id) {
