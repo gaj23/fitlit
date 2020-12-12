@@ -39,7 +39,11 @@ describe('Sleep', () => {
     ]);
   });
 
-  it.only('should calculate all time average number of hours slept per day', () => {
+  it.only('should calculate all time average number of hours slept', () => {
     expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal('6.7');
+  })
+
+  it.only('should calculate all time average quality of hours slept', () => {
+    expect(sleep.calculateDailyAvgSleepQuality(2)).to.equal('3.8');
   })
 });

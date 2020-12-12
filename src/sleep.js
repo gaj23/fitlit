@@ -12,7 +12,13 @@ class Sleep {
   calculateDailyAvgHoursSlept(id) {
     return (this.getUsersSleepData(id).reduce((acc, user) => {
       return acc += user.hoursSlept;
-    }, 0) / this.getUsersSleepData(id).length).toFixed(1)
+    }, 0) / this.getUsersSleepData(id).length).toFixed(1);
+  }
+
+  calculateDailyAvgSleepQuality(id) {
+    return (this.getUsersSleepData(id).reduce((acc, user) => {
+      return acc += user.sleepQuality;
+    }, 0) / this.getUsersSleepData(id).length).toFixed(1);
   }
 }
 
