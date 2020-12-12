@@ -27,18 +27,6 @@ h2, .calendar {
   background-color: #2f2f2f;
 }
 
-.detailed-calendar {
-  background-color: #2f2f2f;
-}
-
-.detailed-calendar-style {
-  background-color: #2f2f2f;
-  font-size: 4rem;
-  margin-left: 24%;
-  padding: 2%;
-  border: none;
-}
-
 h3 {
   font-size: 3.8rem;
 }
@@ -78,10 +66,6 @@ h6 {
   width: 25%
 }
 
-p {
-  font-size: 2.2rem;
-}
-
 /* Hydration Summary */
 .hydration-data {
   color: #56B4E9;
@@ -91,22 +75,12 @@ p {
   background-color: #56B4E9;
 }
 
-.weekly-intake {
-  display: flex;
-  flex-direction: column;
-  margin: 5% 5%;
-}
-
-.weekly-intake>span {
-  color: #56B4E9;
-}
-
 /* Sleep Summary */
 .sleep-data {
   color: #CC79A7;
 }
 
-.sleep-summary>img {
+.sleep-summary>img, .sleep-detailed-view>img {
   background-color: #CC79A7;
 }
 
@@ -119,6 +93,31 @@ p {
   background-color: #E69F00;
 }
 
+/* Detailed View Calendar */
+.detailed-calendar {
+  background-color: #2f2f2f;
+}
+
+.detailed-calendar-style {
+  background-color: #2f2f2f;
+  font-size: 4rem;
+  margin-left: 24%;
+  padding: 2%;
+  border: none;
+}
+
+/* Hydration Detailed */
+.weekly-intake {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 5%;
+}
+
+.weekly-intake>span {
+  color: #56B4E9;
+}
+
+/* Sleep Detailed */
 .hidden {
   display: none !important;
 }
