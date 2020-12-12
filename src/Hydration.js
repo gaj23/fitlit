@@ -1,5 +1,3 @@
-const helper = require('../src/helper.js')
-
 class Hydration {
   constructor(hydrationData) {
     this.hydrationData = hydrationData;
