@@ -12,7 +12,7 @@ describe('Hydration', () => {
   });
 
   it('should return a specific users hydration data', () => {
-    expect(hydration.userHydrationData).to.deep.equal([{
+    expect(hydration.getUserHydrationData(3)).to.deep.equal([{
         userID: 3,
         date: '2019/06/15',
         numOunces: 47
@@ -66,11 +66,11 @@ describe('Hydration', () => {
   })
 
   it('should return a daily intake', () => {
-    expect(hydration.findDailyIntake("2019/06/15")).to.equal(47)
+    expect(hydration.findDailyIntake("2019/06/15", 3)).to.equal(47)
   })
 
   it('should return intake for each day over the course of a week', () => {
-    expect(hydration.getWeeklyIntake("2019/06/16")).to.deep.equal([47, 99, 28, 40, 85, 51, 41])
+    expect(hydration.getWeeklyIntake("2019/06/16", 3)).to.deep.equal([47, 99, 28, 40, 85, 51, 41])
   })
 
 })
