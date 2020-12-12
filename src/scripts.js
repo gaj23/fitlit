@@ -37,8 +37,7 @@ function compareStepGoals() {
 }
 
 function getUserSummaryData() {
-  hydrationStats.getUserHydrationData(12);
-  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
+  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
   // summarySleepData.innerText = `${}`
   // summaryActivityData.innerText = `${}`
 }
