@@ -12,6 +12,11 @@ const detailedHydrationData = document.querySelector('.detailed-hydration-data-j
 const weeklyHydrationData = document.querySelector('.weekly-intake-js');
 const avgHydrationIntakeData = document.querySelector('.avg-intake-js');
 
+// Sleep
+const sleepImg = document.querySelector('#sleep-image');
+const sleepImgDetailed = document.querySelector('#sleep-image-detailed');
+const sleepPage = document.querySelector('.sleep-detailed-view-js')
+
 const allUser = new UserRepository(userData);
 const user = new User(allUser.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
@@ -19,6 +24,9 @@ const hydrationStats = new Hydration(hydrationData);
 window.addEventListener('load', displaySummaryData);
 hydrationImg.addEventListener('click', displayHydrationPage);
 hydrationImgDetailed.addEventListener('click', displayHydrationPage);
+
+sleepImg.addEventListener('click', displaySleepPage);
+sleepImgDetailed.addEventListener('click', displaySleepPage);
 
 function displaySummaryData() {
   greetUser();
@@ -44,10 +52,10 @@ function getUserSummaryData() {
 }
 
 function displayHydrationPage() {
-   togglePages(summaryPage, hydrationPage, calendar);
-   hydrationStats.getUserHydrationData(12);
-   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
-   weeklyHydrationData.innerHTML = `
+  togglePages(summaryPage, hydrationPage, calendar);
+  hydrationStats.getUserHydrationData(12);
+  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15')}`;
+  weeklyHydrationData.innerHTML = `
    <span>${hydrationStats.getWeeklyIntake('2019/06/15')[0]}</span>
    <span>${hydrationStats.getWeeklyIntake('2019/06/15')[1]}</span>
    <span>${hydrationStats.getWeeklyIntake('2019/06/15')[2]}</span>
@@ -57,6 +65,10 @@ function displayHydrationPage() {
    <span>${hydrationStats.getWeeklyIntake('2019/06/15')[6]}</span>
   `;
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake()} oz`;
+}
+
+function displaySleepPage() {
+  togglePages(summaryPage, sleepPage, calendar);
 }
 
 function togglePages(pageOne, pageTwo, pageThree) {
