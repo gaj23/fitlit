@@ -8,6 +8,12 @@ class Sleep {
   getUsersSleepData(id) {
     return helper.getUserData(this.sleepData, id);
   }
+
+  calculateDailyAvgHoursSlept(id) {
+    return (this.getUsersSleepData(id).reduce((acc, user) => {
+      return acc += user.hoursSlept;
+    }, 0) / this.getUsersSleepData(id).length).toFixed(1)
+  }
 }
 
 if (typeof module !== "undefined") {

@@ -27,17 +27,19 @@ describe('Sleep', () => {
       {
         "userID": 2,
         "date": "2019/06/16",
-        "numOunces": 91
+        "hoursSlept": 7.5,
+        "sleepQuality": 3.8
       },
       {
         "userID": 2,
         "date": "2019/06/17",
-        "numOunces": 96
+        "hoursSlept": 5.7,
+        "sleepQuality": 3
       },
     ]);
   });
 
   it.only('should calculate all time average number of hours slept per day', () => {
-    expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal();
+    expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal('6.7');
   })
 });
