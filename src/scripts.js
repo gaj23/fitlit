@@ -44,19 +44,28 @@ function getUserSummaryData() {
 
 function displayHydrationPage() {
    togglePages(summaryPage, hydrationPage, calendar);
+   displayDailyIntake();
+   displayWeeklyIntake();
+   displayAvgIntake();
+}
 
-   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
+function displayDailyIntake() {
+  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
+}
 
-   weeklyHydrationData.innerHTML = `
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[0]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[1]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[2]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[3]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[4]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[5]}</span>
-   <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[6]}</span>
-  `;
+function displayWeeklyIntake() {
+  weeklyHydrationData.innerHTML = `
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[0]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[1]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[2]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[3]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[4]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[5]}</span>
+  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[6]}</span>
+ `;
+}
 
+function displayAvgIntake() {
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
 }
 

@@ -21,7 +21,7 @@ class Hydration {
   getWeeklyIntake(date, id) {
     return this.getUserHydrationData(id).slice(date, 7).map(user => {
       return user.numOunces;
-    })
+    });
   }
 
 }
