@@ -41,9 +41,13 @@ describe('Sleep', () => {
 
   it.only('should calculate all time average number of hours slept', () => {
     expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal('6.7');
-  })
+  });
 
   it.only('should calculate all time average quality of hours slept', () => {
     expect(sleep.calculateDailyAvgSleepQuality(2)).to.equal('3.8');
+  });
+
+  it.only('should return a daily intake', () => {
+    expect(sleep.findDailyHrsSlept("2019/06/15", 2)).to.equal(7)
   })
 });

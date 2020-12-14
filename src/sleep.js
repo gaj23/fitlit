@@ -20,6 +20,10 @@ class Sleep {
       return acc += user.sleepQuality;
     }, 0) / this.getUsersSleepData(id).length).toFixed(1);
   }
+
+  findDailyHrsSlept(date, id) {
+    return this.getUsersSleepData(id).find(day => day.date === date).hoursSlept;
+  }
 }
 
 if (typeof module !== "undefined") {
