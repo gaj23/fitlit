@@ -3,7 +3,7 @@ const helper = {
     return userData.filter(data => data.userID === id);
   },
 
-  getSpecificDate: (userData, date) => {
+  getSpecificWeek: (userData, date) => {
     const specificDay = userData.find(day => day.date === date);
     const week = userData.slice(specificDay, 7);
     return week;
