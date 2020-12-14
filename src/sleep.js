@@ -26,13 +26,19 @@ class Sleep {
   }
 
   findDailySleepQuality(date, id) {
-    return this.getUsersSleepData(id).find(day => day.date === date).sleepQuality
+    return this.getUsersSleepData(id).find(day => day.date === date).sleepQuality;
   }
 
-  calculateWeeklyHrsSlept() {
-    
+  calculateWeeklyHrsSlept(date, id) { 
+    return helper.getSpecificDate(this.getUsersSleepData(id), date).map(date => date.hoursSlept)
+    };
   }
-}
+ 
+
+  // calculateWeeklySleepQuality(date, id) {
+  //   return this.getUsersSleepData(id).slice(date, 7)
+  // }
+// }
 
 if (typeof module !== "undefined") {
   module.exports = Sleep;
