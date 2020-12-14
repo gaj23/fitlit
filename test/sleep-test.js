@@ -47,7 +47,11 @@ describe('Sleep', () => {
     expect(sleep.calculateDailyAvgSleepQuality(2)).to.equal('3.8');
   });
 
-  it.only('should return a daily intake', () => {
+  it.only('should return daily hours slept', () => {
     expect(sleep.findDailyHrsSlept("2019/06/15", 2)).to.equal(7)
-  })
+  });
+
+  it.only('should return daily sleep quality', () => {
+    expect(sleep.findDailySleepQuality("2019/06/15", 2)).to.equal(4.7)
+  });
 });

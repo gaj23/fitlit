@@ -24,6 +24,10 @@ class Sleep {
   findDailyHrsSlept(date, id) {
     return this.getUsersSleepData(id).find(day => day.date === date).hoursSlept;
   }
+
+  findDailySleepQuality(date, id) {
+    return this.getUsersSleepData(id).find(day => day.date === date).sleepQuality
+  }
 }
 
 if (typeof module !== "undefined") {
