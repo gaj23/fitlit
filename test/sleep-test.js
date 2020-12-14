@@ -1,7 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 
-const Sleep = require('../src/sleep');
+const Sleep = require('../src/Sleep');
 const sleepData = require('./test-data/sleep-test-data');
 const helper = require('../src/helper');
 
@@ -54,4 +54,8 @@ describe('Sleep', () => {
   it.only('should return daily sleep quality', () => {
     expect(sleep.findDailySleepQuality("2019/06/15", 2)).to.equal(4.7)
   });
+
+  it.only('it should calculate how many hours slept each day over a given week', () => {
+    expect(sleep.calculateWeeklyHrsSlep("2019/06/15", 2)).to.equal()
+  })
 });
