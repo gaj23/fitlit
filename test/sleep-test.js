@@ -36,15 +36,39 @@ describe('Sleep', () => {
         "hoursSlept": 5.7,
         "sleepQuality": 3
       },
+      {
+        "userID": 2,
+        "date": "2019/06/18",
+        "hoursSlept": 10.8,
+        "sleepQuality": 3.2
+      },
+      {
+        "userID": 2,
+        "date": "2019/06/19",
+        "hoursSlept": 9.6,
+        "sleepQuality": 2.5
+      },
+      {
+        "userID": 2,
+        "date": "2019/06/20",
+        "hoursSlept": 10.1,
+        "sleepQuality": 2.4
+      },
+      {
+        "userID": 2,
+        "date": "2019/06/21",
+        "hoursSlept": 4.3,
+        "sleepQuality": 4.8
+      },
     ]);
   });
 
   it.only('should calculate all time average number of hours slept', () => {
-    expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal('6.7');
+    expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal('7.9');
   });
 
   it.only('should calculate all time average quality of hours slept', () => {
-    expect(sleep.calculateDailyAvgSleepQuality(2)).to.equal('3.8');
+    expect(sleep.calculateDailyAvgSleepQuality(2)).to.equal('3.5');
   });
 
   it.only('should return daily hours slept', () => {
@@ -55,7 +79,11 @@ describe('Sleep', () => {
     expect(sleep.findDailySleepQuality("2019/06/15", 2)).to.equal(4.7)
   });
 
-  it.only('it should calculate how many hours slept each day over a given week', () => {
-    expect(sleep.calculateWeeklyHrsSlep("2019/06/15", 2)).to.equal()
-  })
+  it.only('should calculate how many hours slept each day over a given week', () => {
+    expect(sleep.calculateWeeklyHrsSlept("2019/06/15", 2)).to.equal([7, 7.5, 5.7, 10.8, 9.6, 10.1, 4.3])
+  });
+
+  it('should calculate sleep quallity each day over a given week', () => {
+    expect(sleep.calculateWeeklySleepQuality("2019/06/15", 2)).to.equal()
+  });
 });
