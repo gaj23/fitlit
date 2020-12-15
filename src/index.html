@@ -96,18 +96,62 @@
     </h6>
   </section>
 
-  <section class="activity-detailed-view hidden" id="activity-details">
-    <h5>Activity</h5>
-    <h3>Steps Taken: <span class="day-steps">4444</span></h3>
-    <h4>Steps over the last 7 days: <span class="weekly-steps">4444, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>Mileage: <span class="day-miles">.2</span> </h5>
-    <h5>How you stack up: <span class="day-steps"></span>/<span class="users-average-steps"></span> steps</h5>
-
-    <h4>Active minutes over the last 7 days: <span class="weekly-active-minutes">40, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>How you stack up: <span class="day-activity"></span>/<span class="users-average-activity"></span> minutes</h5>
-
-    <h4>Flights climbed over the last 7 days: <span class="weekly-flights">4444, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>How you stack up: <span class="day-flights"></span>/<span class="users-average-flights"></span> flights</h5>
+  <section class="activity-detailed-view activity-detailed-view-js hidden">
+    <div>
+      <h5>Activity</h5>
+      <img src="../assets/activity.png" alt="activity icon" id="activity-image-detailed">
+    </div> 
+    <h6>Steps Taken: 
+      <span class="day-steps">4444</span>
+    </h6>
+    <h6>Steps over the last 7 days: 
+      <div>
+        <span>4444</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div>
+    </h6>
+    <h6>Mileage: 
+      <span class="day-miles">.2</span>
+    </h6>
+    <h6>How you stack up: 
+      <span class="day-steps"></span>/
+      <span class="users-average-steps"></span>steps
+    </h6>
+    <h6>Active minutes over the last 7 days: 
+      <div class="users-average-activity">
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div>
+    </h6>
+    <h6>How you stack up: 
+      <span class="day-activity"></span>/
+      <span class="users-average-activity"></span> minutes
+    </h6>
+      <div class="weekly-flights">
+        <h6>Flights climbed over the last 7 days: 
+          <span>0</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+        </h6>
+      </div>
+    <h6>How you stack up: 
+      <span class="day-flights"></span>/
+      <span class="users-average-flights"></span> flights
+    </h6>
   </section>
 
   <script type="text/javascript" src="../data/users.js"></script>
