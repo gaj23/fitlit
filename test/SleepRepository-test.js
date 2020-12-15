@@ -24,7 +24,7 @@ describe('SleepRepo', () => {
   })
 
   it.skip('should return the users who slept the most hours on a given day if there is a tie', () => {
-
+    expect(sleepRepo.findMostHoursSlept('2019/06/17')).to.equal([2, 4]);
   })
 
 })
