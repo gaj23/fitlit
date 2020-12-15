@@ -15,6 +15,12 @@ class SleepRepo {
       return user.userID;
     });
   }
+
+  findMostHoursSlept(date) {
+    return this.sleepData.filter(user => date === user.date).sort((a, b) => {
+      return b.hoursSlept - a.hoursSlept;
+    })[0].userID
+  }
 }
 
 
