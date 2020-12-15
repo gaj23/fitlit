@@ -40,6 +40,9 @@ h5 {
 h6 {
   font-size: 3rem;
   text-align: center;
+  border: 0.3rem solid grey;
+  border-radius: 5%;
+  margin: 2% 2% 5% 2%;
 }
 
 /* General Summary Formatting */
