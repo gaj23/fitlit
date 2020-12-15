@@ -1,14 +1,12 @@
 // summary page
 const userName = document.querySelector('.greeting');
 const summaryPage = document.querySelector('.summary-view-js');
-const summaryCalendar = document.querySelector('#summary-calendar');
+const calendar = document.querySelector('#calendar');
 const hydrationImg = document.querySelector('#hydration-image');
 const summaryHydrationData = document.querySelector('.hydration-data-js');
 const sleepImg = document.querySelector('#sleep-image');
 const summarySleepData = document.querySelector('.sleep-data-js');
 const stepGoalComparison = document.querySelector('.step-goal-comparison');
-
-const detailedCalendar = document.querySelector('.detailed-calendar');
 
 // hydration
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
@@ -65,7 +63,7 @@ function getUserSummaryData() {
 }
 
 function displayHydrationPage() {
-  togglePages(summaryPage, hydrationPage, detailedCalendar);
+  togglePages(summaryPage, hydrationPage);
   displayDailyIntake();
   displayWeeklyIntake();
   displayAvgIntake();
@@ -84,7 +82,7 @@ function displayAvgIntake() {
 }
 
 function displaySleepPage() {
-  togglePages(summaryPage, sleepPage, detailedCalendar);
+  togglePages(summaryPage, sleepPage);
   dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept('2019/06/15', 12)}`;
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality('2019/06/15', 12)}`;
   getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept('2019/06/15', 12));
@@ -93,7 +91,7 @@ function displaySleepPage() {
 }
 
 function getDate() {
-  const date = summaryCalendar.value;
+  const date = calendar.value;
   let dataDate = date.replace('-', '/');
   dataDate = dataDate.replace('-', '/');
   return dataDate;
@@ -111,8 +109,7 @@ function getWeeklyData(selector, method) {
 `;
 }
 
-function togglePages(pageOne, pageTwo, pageThree) {
+function togglePages(pageOne, pageTwo) {
   pageOne.classList.toggle('hidden');
   pageTwo.classList.toggle('hidden');
-  pageThree.classList.toggle('hidden');
 }
