@@ -1,21 +1,24 @@
+// summary page
 const userName = document.querySelector('.greeting');
 const summaryPage = document.querySelector('.summary-view-js');
+const summaryCalendar = document.querySelector('#summary-calendar');
+const hydrationImg = document.querySelector('#hydration-image');
+const summaryHydrationData = document.querySelector('.hydration-data-js');
+const sleepImg = document.querySelector('#sleep-image');
+const summarySleepData = document.querySelector('.sleep-data-js');
 const stepGoalComparison = document.querySelector('.step-goal-comparison');
-const calendar = document.querySelector('.detailed-calendar');
+
+const detailedCalendar = document.querySelector('.detailed-calendar');
 
 // hydration
-const summaryHydrationData = document.querySelector('.hydration-data-js');
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
-const hydrationImg = document.querySelector('#hydration-image');
 const hydrationImgDetailed = document.querySelector('#hydration-image-detailed');
 const detailedHydrationData = document.querySelector('.detailed-hydration-data-js');
 const weeklyHydrationData = document.querySelector('.weekly-intake-js');
 const avgHydrationIntakeData = document.querySelector('.avg-intake-js');
 
 // Sleep
-const summarySleepData = document.querySelector('.sleep-data-js');
 const sleepPage = document.querySelector('.sleep-detailed-view-js');
-const sleepImg = document.querySelector('#sleep-image');
 const sleepImgDetailed = document.querySelector('#sleep-image-detailed');
 const dayHoursSlept = document.querySelector('.day-hours-slept-js');
 const daySleepQuality = document.querySelector('.day-sleep-quality-js');
@@ -30,6 +33,8 @@ const summaryActivityData = document.querySelector('.activity-data-js');
 const allUser = new UserRepository(userData);
 const user = new User(allUser.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
+const allSleepStats = new SleepRepo(sleepData);
+const sleepStats = new Sleep(sleepData);
 
 window.addEventListener('load', displaySummaryData);
 hydrationImg.addEventListener('click', displayHydrationPage);
@@ -60,10 +65,10 @@ function getUserSummaryData() {
 }
 
 function displayHydrationPage() {
-   togglePages(summaryPage, hydrationPage, calendar);
-   displayDailyIntake();
-   displayWeeklyIntake();
-   displayAvgIntake();
+  togglePages(summaryPage, hydrationPage, detailedCalendar);
+  displayDailyIntake();
+  displayWeeklyIntake();
+  displayAvgIntake();
 }
 
 function displayDailyIntake() {
@@ -87,7 +92,7 @@ function displayAvgIntake() {
 }
 
 function displaySleepPage() {
-  togglePages(summaryPage, sleepPage, calendar);
+  togglePages(summaryPage, sleepPage, detailedCalendar);
   //call necessary functions for setup (separate helper function?)
   //dayHoursSlept.innerText = `${}`;
   // summarySleepData.innerText = `${}`  Should this be the same to DRY up code?
