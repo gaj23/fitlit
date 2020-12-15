@@ -20,11 +20,11 @@ describe('SleepRepo', () => {
   })
 
   it('should find user who slept the most hours on a given day', () => {
-    expect(sleepRepo.findMostHoursSlept('2019/06/15')).to.equal(3);
+    expect(sleepRepo.findMostHoursSlept('2019/06/15')).to.deep.equal([3]);
   })
 
-  it.skip('should return the users who slept the most hours on a given day if there is a tie', () => {
-    expect(sleepRepo.findMostHoursSlept('2019/06/17')).to.equal([2, 4]);
+  it('should return the users who slept the most hours on a given day if there is a tie', () => {
+    expect(sleepRepo.findMostHoursSlept('2019/06/20')).to.deep.equal([2, 5]);
   })
 
 })
