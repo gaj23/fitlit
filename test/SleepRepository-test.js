@@ -16,7 +16,7 @@ describe('SleepRepo', () => {
   })
 
   it('should find users with a sleep quality over 3 for a given week', () => {
-
+    expect(sleepRepo.getGoodQualitySleepUsers('2019/06/15')).to.deep.equal([2, 3, 5]);
   })
 
   it.skip('should find user who slept the most hours on a given day', () => {
