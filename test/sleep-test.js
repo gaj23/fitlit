@@ -83,7 +83,7 @@ describe('Sleep', () => {
     expect(sleep.calculateWeeklyHrsSlept("2019/06/15", 2)).to.deep.equal([7, 7.5, 5.7, 10.8, 9.6, 10.1, 4.3])
   });
 
-  // it.only('should calculate sleep quallity each day over a given week', () => {
-  //   expect(sleep.calculateWeeklySleepQuality("2019/06/15", 2)).to.equal()
-  // });
+  it.only('should calculate sleep quallity each day over a given week', () => {
+    expect(sleep.calculateWeeklySleepQuality("2019/06/15", 2)).to.deep.equal([4.7, 3.8, 3, 3.2, 2.5, 2.4, 4.8])
+  });
 });

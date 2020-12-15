@@ -31,14 +31,13 @@ class Sleep {
 
   calculateWeeklyHrsSlept(date, id) { 
     return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.hoursSlept)
-    };
   }
  
+  calculateWeeklySleepQuality(date, id) {
+    return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.sleepQuality)
+  }
+} 
 
-  // calculateWeeklySleepQuality(date, id) {
-  //   return this.getUsersSleepData(id).slice(date, 7)
-  // }
-// }
 
 if (typeof module !== "undefined") {
   module.exports = Sleep;
