@@ -4,8 +4,8 @@ const helper = {
   },
 
   getSpecificWeek: (userData, date) => {
-    const specificDay = userData.find(day => day.date === date);
-    const week = userData.slice(specificDay, 7);
+    const specificDay = userData.findIndex(day => day.date === date);
+    const week = userData.slice(specificDay - 3, specificDay + 4);
     return week;
   }
 }
