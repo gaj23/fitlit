@@ -12,17 +12,6 @@ h1 {
   padding: 4%;
 }
 
-h2, .calendar {
-  font-size: 3rem;
-  padding: 2%;
-  margin-left: 2%;
-}
-
-.calendar {
-  border: 1px solid #fff;
-  background-color: #2f2f2f;
-}
-
 h3 {
   font-size: 3.8rem;
 }
@@ -89,8 +78,8 @@ h6 {
   background-color: #E69F00;
 }
 
-/* Detailed View Calendar */
-.detailed-calendar {
+/* Calendar */
+.calendar {
   background-color: #2f2f2f;
 }
 
