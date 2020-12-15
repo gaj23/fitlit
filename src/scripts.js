@@ -33,8 +33,10 @@ const user = new User(allUser.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
 const allSleepStats = new SleepRepo(sleepData);
 const sleepStats = new Sleep(sleepData);
+let date = '2019/06/15'
 
 window.addEventListener('load', displaySummaryData);
+calendar.addEventListener('change', resetData);
 hydrationImg.addEventListener('click', displayHydrationPage);
 hydrationImgDetailed.addEventListener('click', displayHydrationPage);
 sleepImg.addEventListener('click', displaySleepPage);
@@ -42,6 +44,7 @@ sleepImgDetailed.addEventListener('click', displaySleepPage);
 
 function displaySummaryData() {
   greetUser();
+  getDate();
   compareStepGoals();
   getUserSummaryData();
 }
@@ -57,8 +60,8 @@ function compareStepGoals() {
 }
 
 function getUserSummaryData() {
-  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
-  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept('2019/06/15', 12)}`
+  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
+  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`
   // summaryActivityData.innerText = `${}`
 }
 
@@ -70,31 +73,56 @@ function displayHydrationPage() {
 }
 
 function displayDailyIntake() {
-  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
+  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
 }
 
 function displayWeeklyIntake() {
-  getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake('2019/06/15', 12));
+  getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake(date, 12));
 }
 
 function displayAvgIntake() {
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
 }
 
+function resetHydrationPage() {
+  displayDailyIntake();
+  displayWeeklyIntake();
+  displayAvgIntake();
+}
+
 function displaySleepPage() {
   togglePages(summaryPage, sleepPage);
-  dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept('2019/06/15', 12)}`;
-  daySleepQuality.innerText = `${sleepStats.findDailySleepQuality('2019/06/15', 12)}`;
-  getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept('2019/06/15', 12));
+  dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
+  daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, 12)}`;
+  getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept(date, 12));
+  allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
+  allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
+}
+
+function resetSleepPage() {
+  dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
+  daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, 12)}`;
+  getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept(date, 12));
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
 }
 
 function getDate() {
-  const date = calendar.value;
-  let dataDate = date.replace('-', '/');
+  const newDate = calendar.value;
+  let dataDate = newDate.replace('-', '/');
   dataDate = dataDate.replace('-', '/');
-  return dataDate;
+  console.log(dataDate);
+  date = dataDate;
+}
+
+function resetData() {
+  displaySummaryData();
+  resetHydrationPage();
+  resetSleepPage();
+  // displayHydrationPage();
+  // displaySleepPage();
+  //close, but toggling occurs soooo
+  //create another function that doesn't have toggle pages?
 }
 
 function getWeeklyData(selector, method) {
