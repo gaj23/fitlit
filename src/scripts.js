@@ -92,6 +92,13 @@ function displaySleepPage() {
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
 }
 
+function getDate() {
+  const date = summaryCalendar.value;
+  let dataDate = date.replace('-', '/');
+  dataDate = dataDate.replace('-', '/');
+  return dataDate;
+}
+
 function getWeeklyData(selector, method) {
   selector.innerHTML = `
 <span>${method[0]}</span>
