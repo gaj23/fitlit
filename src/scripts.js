@@ -76,15 +76,7 @@ function displayDailyIntake() {
 }
 
 function displayWeeklyIntake() {
-  weeklyHydrationData.innerHTML = `
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[0]}</span>
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[1]}</span>
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[2]}</span>
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[3]}</span>
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[4]}</span>
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[5]}</span>
-  <span>${hydrationStats.getWeeklyIntake('2019/06/15', 12)[6]}</span>
- `;
+  getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake('2019/06/15', 12));
 }
 
 function displayAvgIntake() {
@@ -93,22 +85,23 @@ function displayAvgIntake() {
 
 function displaySleepPage() {
   togglePages(summaryPage, sleepPage, detailedCalendar);
-  //call necessary functions for setup (separate helper function?)
   dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept('2019/06/15', 12)}`;
-  // summarySleepData.innerText = `${}`  Should this be the same to DRY up code?
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality('2019/06/15', 12)}`;
-  //weeklyHoursSlept.innerHTML = `
-  //  <span>${}</span>
-  //  <span>${}</span>
-  //  <span>${}</span>
-  //  <span>${}</span>
-  //  <span>${}</span>
-  //  <span>${}</span>
-  //  <span>${}</span>
-  // `;
-  // (DRY up code?), repeat of hydration
+  getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept('2019/06/15', 12));
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
+}
+
+function getWeeklyData(selector, method) {
+  selector.innerHTML = `
+<span>${method[0]}</span>
+<span>${method[1]}</span>
+<span>${method[2]}</span>
+<span>${method[3]}</span>
+<span>${method[4]}</span>
+<span>${method[5]}</span>
+<span>${method[6]}</span>
+`;
 }
 
 function togglePages(pageOne, pageTwo, pageThree) {
