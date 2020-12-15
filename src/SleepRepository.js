@@ -9,6 +9,12 @@ class SleepRepo {
       return acc += data.sleepQuality;
     }, 0) / this.sleepData.length).toFixed(1);
   }
+
+  getGoodQualitySleepUsers(date) {
+    return this.sleepData.filter(user => date === user.date && user.sleepQuality > 3).map(user => {
+      return user.userID;
+    });
+  }
 }
 
 
