@@ -24,7 +24,7 @@ const dayHoursSlept = document.querySelector('.day-hours-slept-js');
 const daySleepQuality = document.querySelector('.day-sleep-quality-js');
 const weeklyHoursSlept = document.querySelector('.weekly-hours-slept-js');
 const allTimeHoursSlept = document.querySelector('.all-time-hours-slept-js');
-const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality');
+const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality-js');
 
 // Activity
 const summaryActivityData = document.querySelector('.activity-data-js');
@@ -60,7 +60,7 @@ function compareStepGoals() {
 
 function getUserSummaryData() {
   summaryHydrationData.innerText = `${hydrationStats.findDailyIntake('2019/06/15', 12)}`;
-  // summarySleepData.innerText = `${}`
+  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept('2019/06/15', 12)}`
   // summaryActivityData.innerText = `${}`
 }
 
@@ -94,9 +94,9 @@ function displayAvgIntake() {
 function displaySleepPage() {
   togglePages(summaryPage, sleepPage, detailedCalendar);
   //call necessary functions for setup (separate helper function?)
-  //dayHoursSlept.innerText = `${}`;
+  dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept('2019/06/15', 12)}`;
   // summarySleepData.innerText = `${}`  Should this be the same to DRY up code?
-  //daySleepQuality.innerText = `${}`;
+  daySleepQuality.innerText = `${sleepStats.findDailySleepQuality('2019/06/15', 12)}`;
   //weeklyHoursSlept.innerHTML = `
   //  <span>${}</span>
   //  <span>${}</span>
@@ -107,8 +107,8 @@ function displaySleepPage() {
   //  <span>${}</span>
   // `;
   // (DRY up code?), repeat of hydration
-  //allTimeHoursSlept.innerText = `${}`;
-  //allTimeSleepQuality.innerText = `${}`;
+  allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
+  allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
 }
 
 function togglePages(pageOne, pageTwo, pageThree) {
