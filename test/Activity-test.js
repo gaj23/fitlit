@@ -1,15 +1,13 @@
 const chai = require("chai");
 const expect = chai.expect;
 
-
-const UserRepo = require('../src/UserRepository');
 const userData = require('./test-data/user-test-data')
 const Activity = require('../src/Activity');
 const activityData = require('./test-data/activity-test-data');
 const helper = require('../src/helper');
 
 describe('Activity', () => {
-  let activity, user;
+  let activity;
 
   beforeEach(() => {
     helper.getUserData(userData, 2);
@@ -38,12 +36,12 @@ describe('Activity', () => {
   })
 
   it('should filter through to find all days a user exceeded their step goal', () => {
-    expect(activity.findGoalReachedDays(2)).to.be(['2019/06/17', '2019/06/21']);
+    expect(activity.findGoalReachedDays(2)).to.deep.equal(['2019/06/17', '2019/06/21']);
 
   })
 
-  it.skip('should find their all-time stair climbing record', () => {
-
+  it('should find their all-time stair climbing record', () => {
+    expect(activity.findStairRecord(3)).to.equal('2019/06/20')
   })
 
 })
