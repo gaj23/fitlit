@@ -1,4 +1,4 @@
-const helper = require('./helper');
+// const helper = require('./helper');
 
 class Hydration {
   constructor(hydrationData) {
@@ -13,7 +13,7 @@ class Hydration {
     return this.getUserHydrationData(id).reduce((acc, user) => {
       acc += user.numOunces;
       return acc
-    }, 0) / this.getUserHydrationData(id).length
+    }, 0) / this.getUserHydrationData(id).length;
   }
 
   findDailyIntake(date, id) {
@@ -22,9 +22,8 @@ class Hydration {
 
 
   getWeeklyIntake(date, id) {
-    return helper.getSpecificWeek(this.getUserHydrationData(id), date).map(date => date.numOunces)
+    return helper.getSpecificWeek(this.getUserHydrationData(id), date).map(date => date.numOunces);
   }
-
 }
 
 if (typeof module !== "undefined") {
