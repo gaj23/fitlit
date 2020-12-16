@@ -13,19 +13,17 @@ class Hydration {
     return this.getUserHydrationData(id).reduce((acc, user) => {
       acc += user.numOunces;
       return acc
-    }, 0) / this.getUserHydrationData(id).length
+    }, 0) / this.getUserHydrationData(id).length;
   }
 
   findDailyIntake(date, id) {
     return this.getUserHydrationData(id).find(day => day.date === date).numOunces;
   }
 
-  getWeeklyIntake(date, id) {
-    return this.getUserHydrationData(id).slice(date, 7).map(user => {
-      return user.numOunces;
-    });
-  }
 
+  getWeeklyIntake(date, id) {
+    return helper.getSpecificWeek(this.getUserHydrationData(id), date).map(date => date.numOunces);
+  }
 }
 
 if (typeof module !== "undefined") {
