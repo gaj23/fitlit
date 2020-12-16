@@ -28,8 +28,8 @@ const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality-js')
 const summaryActivityData = document.querySelector('.activity-data-js');
 
 
-const allUser = new UserRepository(userData);
-const user = new User(allUser.getUser(12));
+const allUsers = new UserRepository(userData);
+const user = new User(allUsers.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
 // const allSleepStats = new SleepRepo(sleepData);
 const sleepStats = new Sleep(sleepData);
@@ -60,7 +60,7 @@ function getDate() {
 }
 
 function compareStepGoals() {
-  const avgGoal = allUser.calculateAvgStepGoal();
+  const avgGoal = allUsers.calculateAvgStepGoal();
   const userGoal = user.dailyStepGoal;
   stepGoalComparison.innerText = ` Your step goal is: ${userGoal}. Across all users the average step goal is: ${avgGoal}.`;
 }
