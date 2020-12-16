@@ -72,43 +72,29 @@ function getUserSummaryData() {
 function resetData() {
   getDate();
   getUserSummaryData();
-  resetHydrationPage();
-  resetSleepPage();
+  getHydrationPageData();
+  getSleepPageData();
 }
 
 function displayHydrationPage() {
   togglePages(summaryPage, hydrationPage);
-  displayDailyIntake();
-  displayAvgIntake();
-  displayWeeklyIntake();
+  getHydrationPageData();
 }
 
-function displayDailyIntake() {
+function getHydrationPageData() {
   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
-}
-
-function displayWeeklyIntake() {
-  const weeklyStats = hydrationStats.getWeeklyIntake(date, 12)
-  const spacedWeeklyStats = weeklyStats.join(', ')
-  getWeeklyData(weeklyHydrationData, spacedWeeklyStats);
-}
-
-function displayAvgIntake() {
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
-}
-
-function resetHydrationPage() {
-  displayDailyIntake();
-  displayWeeklyIntake();
-  displayAvgIntake();
+  const weeklyStats = hydrationStats.getWeeklyIntake(date, 12);
+  const spacedWeeklyStats = weeklyStats.join(', ');
+  getWeeklyData(weeklyHydrationData, spacedWeeklyStats);
 }
 
 function displaySleepPage() {
   togglePages(summaryPage, sleepPage);
-  resetSleepPage();
+  getSleepPageData();
 }
 
-function resetSleepPage() {
+function getSleepPageData() {
   dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, 12)}`;
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
