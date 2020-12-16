@@ -31,11 +31,14 @@ describe('Activity', () => {
     expect(activity.calculateWeeklyActiveMins('2019/06/15', 1)).to.equal(171);
   })
 
-  it.skip('should notify a user if they reached their step goal', () => {
+  it('should tell if a user if they reached their step goal', () => {
+    expect(activity.giveFeedback('2019/06/15', 2)).to.equal('No');
+    expect(activity.giveFeedback('2019/06/17', 2)).to.equal('Yes');
 
   })
 
-  it.skip('should filter through to find all days a user exceeded their step goal', () => {
+  it('should filter through to find all days a user exceeded their step goal', () => {
+    expect(activity.findGoalReachedDays(2)).to.be(['2019/06/17', '2019/06/21']);
 
   })
 
