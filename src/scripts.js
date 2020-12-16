@@ -7,6 +7,7 @@ const summaryHydrationData = document.querySelector('.hydration-data-js');
 const sleepImg = document.querySelector('#sleep-image');
 const summarySleepData = document.querySelector('.sleep-data-js');
 const stepGoalComparison = document.querySelector('.step-goal-comparison');
+const summaryActivityData = document.querySelector('.activity-data-js');
 
 // hydration
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
@@ -25,7 +26,6 @@ const allTimeHoursSlept = document.querySelector('.all-time-hours-slept-js');
 const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality-js');
 
 // Activity
-const summaryActivityData = document.querySelector('.activity-data-js');
 const activityPage = document.querySelector('.activity-detailed-view-js');
 const activityImg = document.querySelector('#activity-image');
 const activityImgDetailed = document.querySelector('#activity-image-detailed')
@@ -36,6 +36,7 @@ const user = new User(allUsers.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
 // const allSleepStats = new SleepRepo(sleepData);
 const sleepStats = new Sleep(sleepData);
+// const activityStats = new Activity(activityData);
 let date = '2019/06/15'
 
 window.addEventListener('load', displaySummaryData);
@@ -65,15 +66,13 @@ function getDate() {
 }
 
 function compareStepGoals() {
-  const avgGoal = allUsers.calculateAvgStepGoal();
-  const userGoal = user.dailyStepGoal;
-  stepGoalComparison.innerText = ` Your step goal is: ${userGoal}. Across all users the average step goal is: ${avgGoal}.`;
+  stepGoalComparison.innerText = ` Your step goal is: ${user.dailyStepGoal}. Across all users the average step goal is: ${allUsers.calculateAvgStepGoal()}.`;
 }
 
 function getUserSummaryData() {
   summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
-  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`
-  // summaryActivityData.innerText = `${}`
+  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
+  summaryActivityData.innerText = `${user.dailyStepGoal}`;
 }
 
 function resetData() {
@@ -133,7 +132,8 @@ function getWeeklyData(selector, method) {
 }
 
 function displayActivityPage() {
-  togglePages(summaryPage, activityPage)
+  togglePages(summaryPage, activityPage);
+  displayDailySteps();
 }
 
 function togglePages(pageOne, pageTwo) {
