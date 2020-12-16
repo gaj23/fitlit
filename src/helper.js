@@ -9,7 +9,7 @@ const helper = {
     return week;
   },
 
-  getSpecificDay(userData, date) {
+  getSpecificDay: (userData, date) => {
     return userData.filter(day => day.date === date);
   }
 }
