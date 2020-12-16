@@ -11,7 +11,7 @@ const helper = {
 
   getSpecificDay(userData, date) {
     return userData.filter(day => day.date === date);
-   }
+  }
 }
 
 
