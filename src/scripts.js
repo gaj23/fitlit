@@ -6,8 +6,7 @@ const hydrationImg = document.querySelector('#hydration-image');
 const summaryHydrationData = document.querySelector('.hydration-data-js');
 const sleepImg = document.querySelector('#sleep-image');
 const summarySleepData = document.querySelector('.sleep-data-js');
-const stepGoalComparison = document.querySelector('.step-goal-comparison');
-const summaryActivityData = document.querySelector('.activity-data-js');
+const stepGoalComparison = document.querySelector('.step-goal-comparison-js');
 
 // hydration
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
@@ -50,7 +49,6 @@ activityImgDetailed.addEventListener('click', displayActivityPage);
 
 function displaySummaryData() {
   greetUser();
-  compareStepGoals();
   getUserSummaryData();
 }
 
@@ -65,14 +63,10 @@ function getDate() {
   return date = dataDate;
 }
 
-function compareStepGoals() {
-  stepGoalComparison.innerText = ` Your step goal is: ${user.dailyStepGoal}. Across all users the average step goal is: ${allUsers.calculateAvgStepGoal()}.`;
-}
-
 function getUserSummaryData() {
   summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
   summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
-  summaryActivityData.innerText = `${user.dailyStepGoal}`;
+  stepGoalComparison.innerText = ` Your step goal is: ${user.dailyStepGoal}. Across all users the average step goal is: ${allUsers.calculateAvgStepGoal()}.`;
 }
 
 function resetData() {

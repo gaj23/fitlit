@@ -73,7 +73,12 @@ h6 {
 }
 
 /* Activity Summary */
-.activity-data, .detailed-activity, .detailed-activity>span {
+.detailed-activity, .detailed-activity>span {
+  color: #E69F00;
+}
+
+.step-goal-comparison {
+  font-size: 2.3rem;
   color: #E69F00;
 }
 
