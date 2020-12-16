@@ -78,12 +78,9 @@ function getUserSummaryData() {
 
 function resetData() {
   getDate();
-  //new date should exist
   getUserSummaryData();
   resetHydrationPage();
   resetSleepPage();
-  //closer...but the weekly data doesn't update?
-  //need to return date? but reassigning it?
 }
 
 function displayHydrationPage() {
@@ -98,7 +95,9 @@ function displayDailyIntake() {
 }
 
 function displayWeeklyIntake() {
-  getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake(date, 12));
+  const weeklyStats = hydrationStats.getWeeklyIntake(date, 12)
+  const spacedWeeklyStats = weeklyStats.join(', ')
+  getWeeklyData(weeklyHydrationData, spacedWeeklyStats);
 }
 
 function displayAvgIntake() {
@@ -122,19 +121,14 @@ function resetSleepPage() {
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
   const weeklyStats = sleepStats.calculateWeeklyHrsSlept(date, 12)
-  getWeeklyData(weeklyHoursSlept, weeklyStats);
+  const spacedWeeklyStats = weeklyStats.join(', ')
+  getWeeklyData(weeklyHoursSlept, spacedWeeklyStats);
 }
 
 
 function getWeeklyData(selector, method) {
   selector.innerHTML = `
-<span>${method[0]}</span>
-<span>${method[1]}</span>
-<span>${method[2]}</span>
-<span>${method[3]}</span>
-<span>${method[4]}</span>
-<span>${method[5]}</span>
-<span>${method[6]}</span>
+<span>${method}</span>
 `;
 }
 
