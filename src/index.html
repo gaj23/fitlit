@@ -38,9 +38,9 @@
   </section>
 
   <!-- detailed views below -->
-  <div class="detailed-calendar hidden">
+  <section class="detailed-calendar hidden">
     <input type="date" id="day" class="detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
-  </div>
+  </section>
   <section class="hydration-detailed-view hydration-detailed-view-js hidden">
     <div class="hydration-summary">
       <h5 class="hydration-data">Hydration Stats</h5>
@@ -87,7 +87,7 @@
         <span>6</span>
       </div>
     </h6>
-    <h6>All Time Averages:</h6>
+    <h5>All Time Averages:</h5>
     <h6>Hours Slept:
       <span class="detailed-sleep all-time-hours-slept-js">0</span>
     </h6>
@@ -96,18 +96,60 @@
     </h6>
   </section>
 
-  <section class="activity-detailed-view hidden" id="activity-details">
-    <h5>Activity</h5>
-    <h3>Steps Taken: <span class="day-steps">4444</span></h3>
-    <h4>Steps over the last 7 days: <span class="weekly-steps">4444, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>Mileage: <span class="day-miles">.2</span> </h5>
-    <h5>How you stack up: <span class="day-steps"></span>/<span class="users-average-steps"></span> steps</h5>
-
-    <h4>Active minutes over the last 7 days: <span class="weekly-active-minutes">40, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>How you stack up: <span class="day-activity"></span>/<span class="users-average-activity"></span> minutes</h5>
-
-    <h4>Flights climbed over the last 7 days: <span class="weekly-flights">4444, 2, 3, 4, 5, 6, 7</span> </h4>
-    <h5>How you stack up: <span class="day-flights"></span>/<span class="users-average-flights"></span> flights</h5>
+  <section class="activity-detailed-view activity-detailed-view-js hidden">
+    <div class="activity-summary">
+      <h5 class="activity-data">Activity Stats</h5>
+      <img class="activity-detailed-img" src="../assets/activity.png" alt="activity icon" id="activity-image-detailed">
+    </div> 
+    <h6>Daily Steps:
+      <span class="detailed-activity daily-steps">0/all user avg</span>
+    </h6>
+    <h6>Step Goal Reached:
+      <span class="detailed-activity goal-reached">&#x1F44D</span>
+    </h6>
+    <h6>Daily Minutes Active:
+      <span class="detailed-activity min-active">0/all user avg</span>
+    </h6>
+    <h6>Daily Flight of Stairs:
+      <span class="detailed-activity min-active">0/all user avg</span>
+    </h6>
+    <h6>Daily Mileage Walked: 
+      <span class="detailed-activity mile-walk">0</span>
+    </h6>
+    <h5>Weekly Stats</h5>
+    <h6>Step Count:
+      <div class="detailed-activity">
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div>
+    </h6>
+    <h6>Flights of Stairs Climbed:
+      <div class="detailed-activity">
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div>
+    </h6>
+    <h6>Minutes Active:
+      <div class="detailed-activity">
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+      </div>
+    </h6>
   </section>
 
   <script type="text/javascript" src="../data/users.js"></script>
@@ -118,7 +160,7 @@
   <script type="text/javascript" src="../src/User.js"></script>
   <script type="text/javascript" src="../src/helper.js"></script>
   <script type="text/javascript" src="../src/Hydration.js"></script>
-  <script type="text/javascript" src="../src/SleepRepo.js"></script>
+  <script type="text/javascript" src="../src/SleepRepository.js"></script>
   <script type="text/javascript" src="../src/Sleep.js"></script>
   <script type="text/javascript" src="./scripts.js"></script>
 </body>
