@@ -29,6 +29,9 @@ h5 {
 h6 {
   font-size: 3rem;
   text-align: center;
+  border: 0.3rem solid grey;
+  border-radius: 5%;
+  margin: 2% 2% 5% 2%;
 }
 
 /* General Summary Formatting */
@@ -70,7 +73,7 @@ h6 {
 }
 
 /* Activity Summary */
-.activity-data {
+.activity-data, .detailed-activity, .detailed-activity>span {
   color: #E69F00;
 }
 
@@ -92,7 +95,7 @@ h6 {
 }
 
 /* Detailed Styling */
-.detailed-hydration, .detailed-sleep {
+.detailed-hydration, .detailed-sleep, .detailed-activity  {
   display: flex;
   flex-direction: column;
   margin: 5% 5%;

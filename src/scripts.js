@@ -26,6 +26,9 @@ const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality-js')
 
 // Activity
 const summaryActivityData = document.querySelector('.activity-data-js');
+const activityPage = document.querySelector('.activity-detailed-view-js');
+const activityImg = document.querySelector('#activity-image');
+const activityImgDetailed = document.querySelector('#activity-image-detailed')
 
 
 const allUsers = new UserRepository(userData);
@@ -41,6 +44,8 @@ hydrationImg.addEventListener('click', displayHydrationPage);
 hydrationImgDetailed.addEventListener('click', displayHydrationPage);
 sleepImg.addEventListener('click', displaySleepPage);
 sleepImgDetailed.addEventListener('click', displaySleepPage);
+activityImg.addEventListener('click', displayActivityPage);
+activityImgDetailed.addEventListener('click', displayActivityPage);
 
 function displaySummaryData() {
   greetUser();
@@ -131,6 +136,10 @@ function getWeeklyData(selector, method) {
 <span>${method[5]}</span>
 <span>${method[6]}</span>
 `;
+}
+
+function displayActivityPage() {
+  togglePages(summaryPage, activityPage)
 }
 
 function togglePages(pageOne, pageTwo) {
