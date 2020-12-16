@@ -1,32 +1,32 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  /* border: 2px solid yellow; */
   color: #fff;
   background-color: #000;
   font-family: 'Open Sans', sans-serif;
 }
 
+/* Desktop Styling */
 h1 {
-  font-size: 5rem;
-  padding: 4%;
+  font-size: 4rem;
+  text-align: center;
 }
 
-h3 {
-  font-size: 3.8rem;
-}
-
-h4 {
+h2 {
   font-size: 3.2rem;
 }
 
-h5 {
-  font-size: 4.5rem;
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
   text-align: center;
   margin: 3%;
 }
 
-h6 {
+h5 {
   font-size: 3rem;
   text-align: center;
   border: 0.3rem solid grey;
@@ -34,77 +34,106 @@ h6 {
   margin: 2% 2% 5% 2%;
 }
 
-/* General Summary Formatting */
-.title-data {
-  padding-left: 10%;
+h6 {
+  font-size: 1.2rem;
 }
 
-.hydration-summary, .sleep-summary, .activity-summary {
-  height: 20rem;
-  margin: 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
-  padding: 2%;
-  margin: 8%;
-  border-radius: 10%;
-  width: 25%
-}
-
-/* Hydration */
-.hydration-data, .detailed-hydration, .detailed-hydration>span {
-  color: #56B4E9;
-}
-
-.hydration-summary>img {
-  background-color: #56B4E9;
-}
-
-/* Sleep */
-.sleep-data, .detailed-sleep, .detailed-sleep>span {
-  color: #CC79A7;
-}
-
-.sleep-summary>img, .sleep-detailed-view>img {
-  background-color: #CC79A7;
-}
-
-/* Activity Summary */
-.activity-data, .detailed-activity, .detailed-activity>span {
-  color: #E69F00;
-}
-
-.activity-summary>img {
-  background-color: #E69F00;
-}
-
-/* Calendar */
 .calendar {
   background-color: #2f2f2f;
+  text-align: center;
 }
 
 .detailed-calendar-style {
   background-color: #2f2f2f;
-  font-size: 4rem;
-  margin-left: 24%;
-  padding: 2%;
+  font-size: 2rem;
+  padding: 1%;
   border: none;
 }
 
-/* Detailed Styling */
-.detailed-hydration, .detailed-sleep, .detailed-activity  {
-  display: flex;
-  flex-direction: column;
-  margin: 5% 5%;
-}
-
-.sleep-data {
-  margin-left: 9%;
-}
-
-.hidden {
+/* .hidden {
   display: none !important;
+} */
+@media screen and (max-width: 41rem) {
+  h1 {
+    font-size: 3.5rem;
+    text-align: left;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 4.5rem;
+  }
+
+  /* General Summary Formatting */
+  .title-data {
+    padding-left: 10%;
+  }
+
+  .hydration-summary, .sleep-summary, .activity-summary {
+    height: 20rem;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+    padding: 2%;
+    margin: 8%;
+    border-radius: 10%;
+    width: 25%
+  }
+
+  /* Hydration */
+  .hydration-data, .detailed-hydration, .detailed-hydration>span {
+    color: #56B4E9;
+  }
+
+  .hydration-summary>img {
+    background-color: #56B4E9;
+  }
+
+  /* Sleep */
+  .sleep-data, .detailed-sleep, .detailed-sleep>span {
+    color: #CC79A7;
+  }
+
+  .sleep-summary>img, .sleep-detailed-view>img {
+    background-color: #CC79A7;
+  }
+
+  /* Activity Summary */
+  .activity-data, .detailed-activity, .detailed-activity>span {
+    color: #E69F00;
+  }
+
+  .activity-summary>img {
+    background-color: #E69F00;
+  }
+
+  /* Calendar */
+  .detailed-calendar-style {
+    font-size: 2rem;
+    padding: 2%;
+  }
+
+  /* Detailed Styling */
+  .detailed-hydration, .detailed-sleep, .detailed-activity {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 5%;
+  }
+
+  .sleep-data {
+    margin-left: 9%;
+  }
 }
