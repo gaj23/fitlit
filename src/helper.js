@@ -5,7 +5,7 @@ const helper = {
 
   getSpecificWeek: (userData, date) => {
     const specificDay = userData.findIndex(day => day.date === date);
-    const week = userData.slice(specificDay - 3, specificDay + 4);
+    const week = userData.slice(specificDay, (specificDay + 7));
     return week;
   }
 }
