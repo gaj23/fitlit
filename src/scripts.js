@@ -89,12 +89,10 @@ function displayHydrationPage() {
 }
 
 function displayDailyIntake() {
-  console.log('daily intake', date)
   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
 }
 
 function displayWeeklyIntake() {
-  console.log(date);
   getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake(date, 12));
 }
 
