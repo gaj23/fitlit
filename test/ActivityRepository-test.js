@@ -19,4 +19,7 @@ describe('ActivityRepo', () => {
     expect(activityRepo.getAvgStepsForAllUsers('2019/06/15')).to.equal(5091);
   });
 
-})
+  it.only('should calculate average minutes active for all user on a specific date', () => {
+    expect(activityRepo.getAvgMinActiveForAllUsers('2019/06/15')).to.equal('131.33');
+  });
+});
