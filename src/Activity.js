@@ -28,8 +28,28 @@ class Activity {
     }, 0) / (helper.getSpecificWeek(this.getUserActivityData(id), date)).length)
   }
 
-}
+  giveFeedback(date, id) {
+    const user = this.userData.find(user => user.id === id);
+    const daySteps = helper.getSpecificDay(this.getUserActivityData(id), date)[0].numSteps;
+    if (daySteps > user.dailyStepGoal) {
+      return 'Yes'
+    } else {
+      return 'No'
+    }
+  }
 
+  findGoalReachedDays(id) {
+    const user = this.userData.find(user => user.id === id);
+    return this.getUserActivityData(id).filter(day => day.numSteps > user.dailyStepGoal).map(day => day.date);
+  }
+
+  findStairRecord(id) {
+    return this.getUserActivityData(id).sort((a, b) => {
+      return b.flightsOfStairs - a.flightsOfStairs;
+    })[0].date;
+  }
+
+}
 if (typeof module !== "undefined") {
   module.exports = Activity;
 }
