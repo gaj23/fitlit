@@ -30,8 +30,7 @@ class Sleep {
   }
 
   calculateWeeklyHrsSlept(date, id) {
-    let userData = helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.hoursSlept);
-    return userData;
+    return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.hoursSlept);
   }
 
   calculateWeeklySleepQuality(date, id) {
