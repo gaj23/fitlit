@@ -12,13 +12,12 @@ describe('Sleep', () => {
     helper.getUserData(sleepData, 2);
   });
 
-  it.only('should be an instance of sleep', () => {
+  it('should be an instance of sleep', () => {
     expect(expect(sleep).to.be.an.instanceof(Sleep));
   });
 
-  it.only('should return a specific users sleep data', () => {
-    expect(sleep.getUsersSleepData(2)).to.deep.equal([
-      {
+  it('should return a specific users sleep data', () => {
+    expect(sleep.getUsersSleepData(2)).to.deep.equal([{
         "userID": 2,
         "date": "2019/06/15",
         "hoursSlept": 7,
@@ -63,27 +62,27 @@ describe('Sleep', () => {
     ]);
   });
 
-  it.only('should calculate all time average number of hours slept', () => {
+  it('should calculate all time average number of hours slept', () => {
     expect(sleep.calculateDailyAvgHoursSlept(2)).to.equal('7.9');
   });
 
-  it.only('should calculate all time average quality of hours slept', () => {
+  it('should calculate all time average quality of hours slept', () => {
     expect(sleep.calculateDailyAvgSleepQuality(2)).to.equal('3.5');
   });
 
-  it.only('should return daily hours slept', () => {
+  it('should return daily hours slept', () => {
     expect(sleep.findDailyHrsSlept("2019/06/15", 2)).to.equal(7)
   });
 
-  it.only('should return daily sleep quality', () => {
+  it('should return daily sleep quality', () => {
     expect(sleep.findDailySleepQuality("2019/06/15", 2)).to.equal(4.7)
   });
 
-  it.only('should calculate how many hours slept each day over a given week', () => {
+  it('should calculate how many hours slept each day over a given week', () => {
     expect(sleep.calculateWeeklyHrsSlept("2019/06/15", 2)).to.deep.equal([7, 7.5, 5.7, 10.8, 9.6, 10.1, 4.3])
   });
 
-  it.only('should calculate sleep quallity each day over a given week', () => {
+  it('should calculate sleep quallity each day over a given week', () => {
     expect(sleep.calculateWeeklySleepQuality("2019/06/15", 2)).to.deep.equal([4.7, 3.8, 3, 3.2, 2.5, 2.4, 4.8])
   });
 });
