@@ -73,7 +73,7 @@ h6 {
 }
 
 /* Activity Summary */
-.detailed-activity, .detailed-activity>span {
+.activity-data, .detailed-activity, .detailed-activity>span {
   color: #E69F00;
 }
 

@@ -1,6 +1,6 @@
 // const helper = require('../src/helper');
 
-class ActivityRepo {
+class ActivityRepository {
   constructor(activityData) {
     this.activityData = activityData;
   }
@@ -26,5 +26,5 @@ class ActivityRepo {
 
 
 if (typeof module !== "undefined") {
-  module.exports = ActivityRepo;
+  module.exports = ActivityRepository;
 }

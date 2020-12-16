@@ -1,4 +1,4 @@
-const helper = require('../src/helper');
+// const helper = require('../src/helper');
 // const UserRepository = require('../src/UserRepository');
 // const User = require('../src/User');
 //need user data, too because then have user stride length and step goal
@@ -10,6 +10,10 @@ class Activity {
 
   getUserActivityData(id) {
     return helper.getUserData(this.activityData, id);
+  }
+
+  findDailySteps(date, id) {
+    return this.getUserActivityData(id).find(day => day.date === date).numSteps
   }
 
   calculateMiles(date, id) {
@@ -48,8 +52,8 @@ class Activity {
       return b.flightsOfStairs - a.flightsOfStairs;
     })[0].date;
   }
-
 }
+
 if (typeof module !== "undefined") {
   module.exports = Activity;
 }

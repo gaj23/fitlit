@@ -27,15 +27,16 @@ const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality-js')
 // Activity
 const activityPage = document.querySelector('.activity-detailed-view-js');
 const activityImg = document.querySelector('#activity-image');
-const activityImgDetailed = document.querySelector('#activity-image-detailed')
+const activityImgDetailed = document.querySelector('#activity-image-detailed');
+const dailySteps = document.querySelector('.daily-steps');
 
 
 const allUsers = new UserRepository(userData);
 const user = new User(allUsers.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
-// const allSleepStats = new SleepRepo(sleepData);
 const sleepStats = new Sleep(sleepData);
-// const activityStats = new Activity(activityData);
+const activityStats = new Activity(activityData, userData);
+const activityRepoStats = new ActivityRepository(activityData);
 let date = '2019/06/15'
 
 window.addEventListener('load', displaySummaryData);
@@ -74,6 +75,7 @@ function resetData() {
   getUserSummaryData();
   getHydrationPageData();
   getSleepPageData();
+  getActivityPageData();
 }
 
 function displayHydrationPage() {
@@ -104,7 +106,6 @@ function getSleepPageData() {
   getWeeklyData(weeklyHoursSlept, spacedWeeklyStats);
 }
 
-
 function getWeeklyData(selector, method) {
   selector.innerHTML = `
 <span>${method}</span>
@@ -113,7 +114,11 @@ function getWeeklyData(selector, method) {
 
 function displayActivityPage() {
   togglePages(summaryPage, activityPage);
-  displayDailySteps();
+  getActivityPageData();
+}
+
+function getActivityPageData() {
+ dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} compared to all users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}.`;
 }
 
 function togglePages(pageOne, pageTwo) {
