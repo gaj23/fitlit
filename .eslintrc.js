@@ -31,7 +31,7 @@ module.exports = {
       "after": true
     }],
     "linebreak-style": ["error", "unix"],
-    "max-len": ["warn", 80],
+    "max-len": ["warn", 150],
     "new-cap": ["error", {
       "newIsCap": true
     }],
