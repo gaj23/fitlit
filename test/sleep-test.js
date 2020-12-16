@@ -12,11 +12,11 @@ describe('Sleep', () => {
     helper.getUserData(sleepData, 2);
   });
 
-  it.only('should be an instance of sleep', () => {
+  it('should be an instance of sleep', () => {
     expect(expect(sleep).to.be.an.instanceof(Sleep));
   });
 
-  it.only('should return a specific users sleep data', () => {
+  it('should return a specific users sleep data', () => {
     expect(sleep.getUsersSleepData(2)).to.deep.equal([
       {
         "userID": 2,

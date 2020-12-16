@@ -147,3 +147,5 @@ const userActivity = [
     "flightsOfStairs": 13
   },
 ]
+
+module.exports = userActivity;
