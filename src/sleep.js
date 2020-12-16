@@ -1,4 +1,4 @@
-const helper = require('./helper');
+// const helper = require('./helper');
 
 class Sleep {
   constructor(sleepData) {
@@ -29,14 +29,14 @@ class Sleep {
     return this.getUsersSleepData(id).find(day => day.date === date).sleepQuality;
   }
 
-  calculateWeeklyHrsSlept(date, id) { 
-    return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.hoursSlept)
+  calculateWeeklyHrsSlept(date, id) {
+    return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.hoursSlept);
   }
- 
+
   calculateWeeklySleepQuality(date, id) {
-    return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.sleepQuality)
+    return helper.getSpecificWeek(this.getUsersSleepData(id), date).map(date => date.sleepQuality);
   }
-} 
+}
 
 
 if (typeof module !== "undefined") {

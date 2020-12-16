@@ -17,8 +17,7 @@ describe('Sleep', () => {
   });
 
   it('should return a specific users sleep data', () => {
-    expect(sleep.getUsersSleepData(2)).to.deep.equal([
-      {
+    expect(sleep.getUsersSleepData(2)).to.deep.equal([{
         "userID": 2,
         "date": "2019/06/15",
         "hoursSlept": 7,

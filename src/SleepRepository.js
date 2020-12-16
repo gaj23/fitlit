@@ -1,7 +1,6 @@
 class SleepRepo {
   constructor(sleepData) {
     this.sleepData = sleepData;
-    //all user's data stored as an arry of objects
   }
 
   getTotalSleepQualityAvg() {
