@@ -1,4 +1,4 @@
-// const helper = require('./helper');
+const helper = require('./helper');
 
 class Hydration {
   constructor(hydrationData) {
@@ -20,10 +20,9 @@ class Hydration {
     return this.getUserHydrationData(id).find(day => day.date === date).numOunces;
   }
 
+
   getWeeklyIntake(date, id) {
-    return this.getUserHydrationData(id).slice(date, 7).map(user => {
-      return user.numOunces;
-    });
+    return helper.getSpecificWeek(this.getUserHydrationData(id), date).map(date => date.numOunces)
   }
 
 }
