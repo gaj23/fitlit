@@ -6,7 +6,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Desktop Styling */
+/* Header Styling */
 h1 {
   font-size: 4rem;
   text-align: center;
@@ -18,6 +18,65 @@ h2 {
 
 h3 {
   font-size: 2.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Calendar */
+.calendar {
+  background-color: #2f2f2f;
+  text-align: center;
+}
+
+.detailed-calendar-style {
+  background-color: #2f2f2f;
+  font-size: 2rem;
+  padding: 1%;
+  border: none;
+}
+
+/* General Summary Formatting */
+.hydration-summary, .sleep-summary, .activity-summary {
+  margin: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hydration */
+.hydration-data, .detailed-hydration, .detailed-hydration>span {
+  color: #56B4E9;
+}
+
+.hydration-summary>img {
+  background-color: #56B4E9;
+}
+
+/* Sleep */
+.sleep-data, .detailed-sleep, .detailed-sleep>span {
+  color: #CC79A7;
+}
+
+.sleep-summary>img, .sleep-detailed-view>img {
+  background-color: #CC79A7;
+}
+
+/* Activity Summary */
+.activity-data, .detailed-activity, .detailed-activity>span {
+  color: #E69F00;
+}
+
+.activity-summary>img {
+  background-color: #E69F00;
+}
+
+.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+  padding: 2%;
+  margin: 8%;
+  border-radius: 10%;
+  width: 25%
 }
 
 h4 {
@@ -34,25 +93,11 @@ h5 {
   margin: 2% 2% 5% 2%;
 }
 
-h6 {
-  font-size: 1.2rem;
-}
-
-.calendar {
-  background-color: #2f2f2f;
-  text-align: center;
-}
-
-.detailed-calendar-style {
-  background-color: #2f2f2f;
-  font-size: 2rem;
-  padding: 1%;
-  border: none;
-}
-
-/* .hidden {
+.hidden {
   display: none !important;
-} */
+}
+
+/* Mobile Display */
 @media screen and (max-width: 41rem) {
   h1 {
     font-size: 3.5rem;
@@ -70,7 +115,16 @@ h6 {
   }
 
   h4 {
-    font-size: 4.5rem;
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }
+
+  /* Calendar */
+  .detailed-calendar-style {
+    padding: 2%;
   }
 
   /* General Summary Formatting */
@@ -79,51 +133,10 @@ h6 {
   }
 
   .hydration-summary, .sleep-summary, .activity-summary {
-    height: 20rem;
     margin: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
-    padding: 2%;
-    margin: 8%;
-    border-radius: 10%;
-    width: 25%
-  }
-
-  /* Hydration */
-  .hydration-data, .detailed-hydration, .detailed-hydration>span {
-    color: #56B4E9;
-  }
-
-  .hydration-summary>img {
-    background-color: #56B4E9;
-  }
-
-  /* Sleep */
-  .sleep-data, .detailed-sleep, .detailed-sleep>span {
-    color: #CC79A7;
-  }
-
-  .sleep-summary>img, .sleep-detailed-view>img {
-    background-color: #CC79A7;
-  }
-
-  /* Activity Summary */
-  .activity-data, .detailed-activity, .detailed-activity>span {
-    color: #E69F00;
-  }
-
-  .activity-summary>img {
-    background-color: #E69F00;
-  }
-
-  /* Calendar */
-  .detailed-calendar-style {
-    font-size: 2rem;
-    padding: 2%;
   }
 
   /* Detailed Styling */
