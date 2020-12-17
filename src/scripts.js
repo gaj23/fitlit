@@ -141,13 +141,17 @@ function getDailyActivityPageData() {
 }
 
 function getWeeklyActivityPageData() {
-  const weeklyStepsTaken = activityStats.calculateWeeklySteps(date, 12);
+  const weeklyStepsTaken = activityStats.getWeeklySteps(date, 12);
   const spacedWeeklySteps = weeklyStepsTaken.join(', ');
   getWeeklyData(weeklySteps, spacedWeeklySteps);
 
-  const weeklyflightsOfStairs = activityStats.calculateWeeklyflightsOfStairs(date, 12);
+  const weeklyflightsOfStairs = activityStats.getWeeklyflightsOfStairs(date, 12);
   const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
   getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
+
+  const weeklyminutesActive = activityStats.getWeeklyMinutesActive(date, 12);
+  const spacedWeeklyminutesActive = weeklyminutesActive.join(', ');
+  getWeeklyData(weeklyMinsActive, spacedWeeklyminutesActive);
 }
 
 function togglePages(pageOne, pageTwo) {
