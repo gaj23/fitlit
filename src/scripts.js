@@ -32,6 +32,7 @@ const dailySteps = document.querySelector('.daily-steps');
 const goalReached = document.querySelector('.goal-reached');
 const minActive = document.querySelector('.min-active');
 const flightOfStairs = document.querySelector('.flight-of-stairs');
+const mileageWalked = document.querySelector('.mile-walk');
 
 const allUsers = new UserRepository(userData);
 const user = new User(allUsers.getUser(12));
@@ -122,14 +123,12 @@ function displayActivityPage() {
 function getActivityPageData() {
   dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} 
   All users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
-
   goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
-
   minActive.innerText = `Your time: ${activityStats.getActiveMins(date, 12)}
   All users average time: ${activityRepoStats.getAvgMinActiveForAllUsers(date)}`;
-
   flightOfStairs.innerText = `Your flights: ${activityStats.findDailyFlightOfStairs(date, 12)}
   All users avergae flights: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
+  mileageWalked.innerText = `${activityStats.calculateMiles(date, 12)}`
 }
 
 function togglePages(pageOne, pageTwo) {
