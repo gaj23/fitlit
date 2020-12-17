@@ -16,6 +16,10 @@ describe('Activity', () => {
 
   })
 
+  it.only('should be to find a specific users daily steps', () => {
+    expect(activity.findDailySteps('2019/06/15', 3)).to.equal(7402)
+  })
+
   it('should calculate miles a user walked on a chosen day', () => {
     expect(activity.calculateMiles('2019/06/15', 3)).to.equal(6.2);
   })

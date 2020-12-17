@@ -1,7 +1,5 @@
-// const helper = require('../src/helper');
-// const UserRepository = require('../src/UserRepository');
-// const User = require('../src/User');
-//need user data, too because then have user stride length and step goal
+const helper = require('../src/helper');
+
 class Activity {
   constructor(activityData, userData) {
     this.activityData = activityData;
