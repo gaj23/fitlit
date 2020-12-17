@@ -15,7 +15,7 @@ Designed with desktop and mobile viewing in mind, our variation of FitLit provid
 This project was set forth by Turing School of Software and Design with specific parameters to be met. The current iteration (as of 2020/12/17) fulfills up to iteration 4 as outlined in the [rubric](https://frontend.turing.io/projects/fitlit.html). Our team paid close attention to responsive design, thorough testing, DRY SRP coding by utilizing an additional helper file.
 
 ## Features
-Visit our site [here](https://gaj23.github.io/fitlit/) to iteract with our creation!
+Visit our site [here](https://gaj23.github.io/fitlit/src/index.html) to interact with our creation!
 - [Date Selection](#Date-Selection)
 
 - [Icon Interaction](#Icon-Interaction)
