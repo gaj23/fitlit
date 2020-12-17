@@ -10,6 +10,7 @@
 h1 {
   font-size: 4rem;
   text-align: center;
+  margin: 3%;
 }
 
 h2 {
@@ -18,6 +19,24 @@ h2 {
 
 h3 {
   font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2%;
+}
+
+h5 {
+  font-size: 3rem;
+  text-align: center;
+  border: 0.3rem solid grey;
+  border-radius: 5%;
+  width: 25%;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h6 {
@@ -48,6 +67,18 @@ h6 {
   margin: 2%;
   width: 33%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Summary Images */
+.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+  padding: 1%;
+  margin: 2%;
+  border-radius: 10%;
+  width: 33%;
+  order: -1;
 }
 
 /* Hydration */
@@ -68,7 +99,7 @@ h6 {
   background-color: #CC79A7;
 }
 
-/* Activity Summary */
+/* Activity */
 .activity-data, .detailed-activity, .detailed-activity>span {
   color: #E69F00;
 }
@@ -77,26 +108,24 @@ h6 {
   background-color: #E69F00;
 }
 
-/* summary images */
-.hydration-summary>img, .sleep-summary>img, .activity-summary>img {
-  padding: 1%;
-  margin: 2%;
-  border-radius: 10%;
-  width: 33%
+/* Detailed Styling */
+.hydration-detailed-view, .sleep-detailed-view, .activity-detailed-view, .weekly {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h4 {
-  font-size: 2rem;
-  text-align: center;
-  margin: 3%;
+.hydration-stats, .sleep-stats, .activity-stats, .weekly-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: scroll;
 }
 
-h5 {
-  font-size: 3rem;
-  text-align: center;
-  border: 0.3rem solid grey;
-  border-radius: 5%;
-  margin: 2% 2% 5% 2%;
+.weekly {
+  width: 100%;
 }
 
 .hidden {
@@ -104,10 +133,10 @@ h5 {
 }
 
 /* Mobile Display */
-@media screen and (max-width: 41rem) {
+@media screen and (max-width: 40rem) {
   h1 {
     font-size: 3.1rem;
-    text-align: left;
+    margin: 0;
     padding-left: 4%;
     padding-right: 4%;
   }
@@ -126,6 +155,7 @@ h5 {
 
   h5 {
     font-size: 1.8rem;
+    width: 90%;
   }
 
   /* Calendar */
@@ -134,18 +164,19 @@ h5 {
   }
 
   /* General Summary Formatting */
-  .title-data {
-    padding-left: 10%;
-  }
-
   .summary-view {
     display: block;
   }
 
+  .title-data {
+    padding-left: 10%;
+  }
+
   .hydration-summary, .sleep-summary, .activity-summary {
     margin: 0;
-    text-align: left;
+    padding: 5%;
     width: auto;
+    text-align: left;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -153,19 +184,17 @@ h5 {
 
   .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
     padding: 2%;
-    margin: 8%;
-    border-radius: 10%;
-    width: 25%
+    order: 1
   }
 
   /* Detailed Styling */
-  .detailed-hydration, .detailed-sleep, .detailed-activity {
-    display: flex;
-    flex-direction: column;
-    margin: 5% 5%;
+  .hydration-detailed-view, .sleep-detailed-view, .activity-detailed-view {
+    margin: 5%;
   }
 
-  .sleep-data {
-    margin-left: 9%;
+  .hydration-stats, .sleep-stats, .activity-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
