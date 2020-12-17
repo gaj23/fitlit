@@ -93,9 +93,9 @@ function displayHydrationPage() {
 function getHydrationPageData() {
   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
-  const weeklyStats = hydrationStats.getWeeklyIntake(date, 12);
-  const spacedWeeklyStats = weeklyStats.join(', ');
-  getWeeklyData(weeklyHydrationData, spacedWeeklyStats);
+  const weeklyIntake = hydrationStats.getWeeklyIntake(date, 12);
+  const spacedWeeklyIntake = weeklyIntake.join(', ');
+  getWeeklyData(weeklyHydrationData, spacedWeeklyIntake);
 }
 
 function displaySleepPage() {
@@ -108,9 +108,9 @@ function getSleepPageData() {
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, 12)}`;
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
-  const weeklyStats = sleepStats.calculateWeeklyHrsSlept(date, 12)
-  const spacedWeeklyStats = weeklyStats.join(', ')
-  getWeeklyData(weeklyHoursSlept, spacedWeeklyStats);
+  const weeklyHrsSlept = sleepStats.calculateWeeklyHrsSlept(date, 12)
+  const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
+  getWeeklyData(weeklyHoursSlept, spacedWeeklyHrsSlept);
 }
 
 function getWeeklyData(selector, method) {
@@ -125,6 +125,11 @@ function displayActivityPage() {
 }
 
 function getActivityPageData() {
+  getDailyActivityPageData();
+  getWeeklyActivityPageData();
+}
+
+function getDailyActivityPageData() {
   dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} 
   All users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
   goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
@@ -133,6 +138,12 @@ function getActivityPageData() {
   flightOfStairs.innerText = `Your flights: ${activityStats.findDailyFlightOfStairs(date, 12)}
   All users avergae flights: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
   mileageWalked.innerText = `${activityStats.calculateMiles(date, 12)}`
+}
+
+function getWeeklyActivityPageData() {
+  const weeklyStepsTaken = activityStats.calculateWeeklySteps(date, 12);
+  const spacedWeeklySteps = weeklyStepsTaken.join(', ');
+  getWeeklyData(weeklySteps, spacedWeeklySteps);
 }
 
 function togglePages(pageOne, pageTwo) {
