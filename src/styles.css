@@ -40,7 +40,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 
 /* Calendar */
@@ -165,6 +165,7 @@ h6 {
   /* Calendar */
   .detailed-calendar-style {
     padding: 2%;
+    font-size: 2rem;
   }
 
   /* General Summary Formatting */
@@ -194,6 +195,7 @@ h6 {
   /* Detailed Styling */
   .hydration-detailed-view, .sleep-detailed-view, .activity-detailed-view {
     margin: 5%;
+    align-items: stretch;
   }
 
   .hydration-stats, .sleep-stats, .activity-stats {
