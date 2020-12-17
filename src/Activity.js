@@ -34,6 +34,10 @@ class Activity {
     return helper.getSpecificWeek(this.getUserActivityData(id), date).map(date => date.numSteps);
   }
 
+  calculateWeeklyflightsOfStairs(date, id) {
+    return helper.getSpecificWeek(this.getUserActivityData(id), date).map(date => date.flightsOfStairs);
+  }
+
   calculateWeeklyActiveMins(date, id) {
     return Math.round(helper.getSpecificWeek(this.getUserActivityData(id), date).reduce((acc, day) => {
       return acc += day.minutesActive;

@@ -144,6 +144,10 @@ function getWeeklyActivityPageData() {
   const weeklyStepsTaken = activityStats.calculateWeeklySteps(date, 12);
   const spacedWeeklySteps = weeklyStepsTaken.join(', ');
   getWeeklyData(weeklySteps, spacedWeeklySteps);
+
+  const weeklyflightsOfStairs = activityStats.calculateWeeklyflightsOfStairs(date, 12);
+  const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
+  getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
 }
 
 function togglePages(pageOne, pageTwo) {
