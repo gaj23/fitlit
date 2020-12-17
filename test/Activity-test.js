@@ -16,27 +16,27 @@ describe('Activity', () => {
 
   })
 
-  it.only('should be able to find a specific users daily steps', () => {
+  it('should be able to find a specific users daily steps', () => {
     expect(activity.findDailySteps('2019/06/15', 3)).to.equal(7402);
   })
 
-  it.only('should be able to find daily flight of stairs for a specific user', () => {
+  it('should be able to find daily flight of stairs for a specific user', () => {
     expect(activity.findDailyFlightOfStairs('2019/06/15', 3)).to.equal(33);
   })
 
-  it.only('should be able to get daily active minutes for a specific user', () => {
+  it('should be able to get daily active minutes for a specific user', () => {
     expect(activity.getActiveMins('2019/06/15', 3)).to.equal(116);
   })
 
-  it.only('should be able to get weekly steps for a specific user', () => {
+  it('should be able to get weekly steps for a specific user', () => {
     expect(activity.getWeeklySteps('2019/06/15', 3)).to.deep.equal([7402, 12304, 4547, 2546, 10961, 5369, 7498]);
   })
 
-  it.only('should be able to get weekly flight of stairs for a specific user', () => {
+  it('should be able to get weekly flight of stairs for a specific user', () => {
     expect(activity.getWeeklyflightsOfStairs('2019/06/15', 3)).to.deep.equal([33, 8, 5, 26, 17, 46, 13]);
   })
 
-  it.only('should be able to get weekly minutes active for a specific user', () => {
+  it('should be able to get weekly minutes active for a specific user', () => {
     expect(activity.getWeeklyMinutesActive('2019/06/15', 3)).to.deep.equal([116, 152, 97, 274, 188, 129, 199]);
   })
 
