@@ -6,7 +6,7 @@ const hydrationImg = document.querySelector('#hydration-image');
 const summaryHydrationData = document.querySelector('.hydration-data-js');
 const sleepImg = document.querySelector('#sleep-image');
 const summarySleepData = document.querySelector('.sleep-data-js');
-const stepGoalComparison = document.querySelector('.step-goal-comparison');
+const stepGoalComparison = document.querySelector('.step-goal-comparison-js');
 
 // hydration
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
@@ -25,17 +25,25 @@ const allTimeHoursSlept = document.querySelector('.all-time-hours-slept-js');
 const allTimeSleepQuality = document.querySelector('.all-time-sleep-quality-js');
 
 // Activity
-const summaryActivityData = document.querySelector('.activity-data-js');
 const activityPage = document.querySelector('.activity-detailed-view-js');
 const activityImg = document.querySelector('#activity-image');
-const activityImgDetailed = document.querySelector('#activity-image-detailed')
+const activityImgDetailed = document.querySelector('#activity-image-detailed');
+const dailySteps = document.querySelector('.daily-steps');
+const goalReached = document.querySelector('.goal-reached');
+const minActive = document.querySelector('.min-active');
+const flightOfStairs = document.querySelector('.flight-of-stairs');
+const mileageWalked = document.querySelector('.mile-walk');
+const weeklySteps = document.querySelector('.weekly-steps');
+const weeklyStairs = document.querySelector('.weekly-stairs');
+const weeklyMinsActive = document.querySelector('.weekly-mins-active');
 
 
 const allUsers = new UserRepository(userData);
 const user = new User(allUsers.getUser(12));
 const hydrationStats = new Hydration(hydrationData);
-// const allSleepStats = new SleepRepo(sleepData);
 const sleepStats = new Sleep(sleepData);
+const activityStats = new Activity(activityData, userData);
+const activityRepoStats = new ActivityRepository(activityData);
 let date = '2019/06/15'
 
 window.addEventListener('load', displaySummaryData);
@@ -49,7 +57,6 @@ activityImgDetailed.addEventListener('click', displayActivityPage);
 
 function displaySummaryData() {
   greetUser();
-  compareStepGoals();
   getUserSummaryData();
 }
 
@@ -64,67 +71,47 @@ function getDate() {
   return date = dataDate;
 }
 
-function compareStepGoals() {
-  const avgGoal = allUsers.calculateAvgStepGoal();
-  const userGoal = user.dailyStepGoal;
-  stepGoalComparison.innerText = ` Your step goal is: ${userGoal}. Across all users the average step goal is: ${avgGoal}.`;
-}
-
 function getUserSummaryData() {
   summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
-  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`
-  // summaryActivityData.innerText = `${}`
+  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
+  stepGoalComparison.innerText = ` Your step goal is: ${user.dailyStepGoal}. Across all users the average step goal is: ${allUsers.calculateAvgStepGoal()}.`;
 }
 
 function resetData() {
   getDate();
   getUserSummaryData();
-  resetHydrationPage();
-  resetSleepPage();
+  getHydrationPageData();
+  getSleepPageData();
+  getActivityPageData();
 }
 
 function displayHydrationPage() {
   togglePages(summaryPage, hydrationPage);
-  displayDailyIntake();
-  displayAvgIntake();
-  displayWeeklyIntake();
+  getHydrationPageData();
 }
 
-function displayDailyIntake() {
+function getHydrationPageData() {
   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
-}
-
-function displayWeeklyIntake() {
-  const weeklyStats = hydrationStats.getWeeklyIntake(date, 12)
-  const spacedWeeklyStats = weeklyStats.join(', ')
-  getWeeklyData(weeklyHydrationData, spacedWeeklyStats);
-}
-
-function displayAvgIntake() {
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
-}
-
-function resetHydrationPage() {
-  displayDailyIntake();
-  displayWeeklyIntake();
-  displayAvgIntake();
+  const weeklyIntake = hydrationStats.getWeeklyIntake(date, 12);
+  const spacedWeeklyIntake = weeklyIntake.join(', ');
+  getWeeklyData(weeklyHydrationData, spacedWeeklyIntake);
 }
 
 function displaySleepPage() {
   togglePages(summaryPage, sleepPage);
-  resetSleepPage();
+  getSleepPageData();
 }
 
-function resetSleepPage() {
+function getSleepPageData() {
   dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, 12)}`;
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
-  const weeklyStats = sleepStats.calculateWeeklyHrsSlept(date, 12)
-  const spacedWeeklyStats = weeklyStats.join(', ')
-  getWeeklyData(weeklyHoursSlept, spacedWeeklyStats);
+  const weeklyHrsSlept = sleepStats.calculateWeeklyHrsSlept(date, 12)
+  const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
+  getWeeklyData(weeklyHoursSlept, spacedWeeklyHrsSlept);
 }
-
 
 function getWeeklyData(selector, method) {
   selector.innerHTML = `
@@ -133,7 +120,38 @@ function getWeeklyData(selector, method) {
 }
 
 function displayActivityPage() {
-  togglePages(summaryPage, activityPage)
+  togglePages(summaryPage, activityPage);
+  getActivityPageData();
+}
+
+function getActivityPageData() {
+  getDailyActivityPageData();
+  getWeeklyActivityPageData();
+}
+
+function getDailyActivityPageData() {
+  dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} 
+  All users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
+  goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
+  minActive.innerText = `Your time: ${activityStats.getActiveMins(date, 12)}
+  All users average time: ${activityRepoStats.getAvgMinActiveForAllUsers(date)}`;
+  flightOfStairs.innerText = `Your flights: ${activityStats.findDailyFlightOfStairs(date, 12)}
+  All users avergae flights: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
+  mileageWalked.innerText = `${activityStats.calculateMiles(date, 12)}`
+}
+
+function getWeeklyActivityPageData() {
+  const weeklyStepsTaken = activityStats.getWeeklySteps(date, 12);
+  const spacedWeeklySteps = weeklyStepsTaken.join(', ');
+  getWeeklyData(weeklySteps, spacedWeeklySteps);
+
+  const weeklyflightsOfStairs = activityStats.getWeeklyflightsOfStairs(date, 12);
+  const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
+  getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
+
+  const weeklyMinutesActive = activityStats.getWeeklyMinutesActive(date, 12);
+  const spacedWeeklyMinutesActive = weeklyMinutesActive.join(', ');
+  getWeeklyData(weeklyMinsActive, spacedWeeklyMinutesActive);
 }
 
 function togglePages(pageOne, pageTwo) {

@@ -77,6 +77,11 @@ h6 {
   color: #E69F00;
 }
 
+.step-goal-comparison {
+  font-size: 2.3rem;
+  color: #E69F00;
+}
+
 .activity-summary>img {
   background-color: #E69F00;
 }
