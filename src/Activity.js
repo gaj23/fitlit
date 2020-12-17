@@ -16,6 +16,10 @@ class Activity {
     return this.getUserActivityData(id).find(day => day.date === date).numSteps
   }
 
+  findDailyFlightOfStairs(date, id) {
+    return this.getUserActivityData(id).find(day => day.date === date).flightsOfStairs
+  }
+
   calculateMiles(date, id) {
     const user = this.userData.find(user => user.id === id);
     const specificDateActivity = helper.getSpecificDay(this.getUserActivityData(id), date);

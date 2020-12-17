@@ -30,7 +30,8 @@ const activityImg = document.querySelector('#activity-image');
 const activityImgDetailed = document.querySelector('#activity-image-detailed');
 const dailySteps = document.querySelector('.daily-steps');
 const goalReached = document.querySelector('.goal-reached');
-
+const minActive = document.querySelector('.min-active');
+const flightOfStairs = document.querySelector('.flight-of-stairs');
 
 const allUsers = new UserRepository(userData);
 const user = new User(allUsers.getUser(12));
@@ -124,7 +125,11 @@ function getActivityPageData() {
 
   goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
 
-  
+  minActive.innerText = `Your time: ${activityStats.getActiveMins(date, 12)}
+  All users average time: ${activityRepoStats.getAvgMinActiveForAllUsers(date)}`;
+
+  flightOfStairs.innerText = `Your flights: ${activityStats.findDailyFlightOfStairs(date, 12)}
+  All users avergae flights: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
 }
 
 function togglePages(pageOne, pageTwo) {
