@@ -36,6 +36,10 @@ describe('Activity', () => {
     expect(activity.getWeeklyflightsOfStairs('2019/06/15', 3)).to.deep.equal([33, 8, 5, 26, 17, 46, 13]);
   })
 
+  it.only('should be able to get weekly minutes active for a specific user', () => {
+    expect(activity.getWeeklyMinutesActive('2019/06/15', 3)).to.deep.equal([116, 152, 97, 274, 188, 129, 199]);
+  })
+
   it('should calculate miles a user walked on a chosen day', () => {
     expect(activity.calculateMiles('2019/06/15', 3)).to.equal(6.2);
   })
