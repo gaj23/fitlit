@@ -149,9 +149,9 @@ function getWeeklyActivityPageData() {
   const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
   getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
 
-  const weeklyminutesActive = activityStats.getWeeklyMinutesActive(date, 12);
-  const spacedWeeklyminutesActive = weeklyminutesActive.join(', ');
-  getWeeklyData(weeklyMinsActive, spacedWeeklyminutesActive);
+  const weeklyMinutesActive = activityStats.getWeeklyMinutesActive(date, 12);
+  const spacedWeeklyMinutesActive = weeklyMinutesActive.join(', ');
+  getWeeklyData(weeklyMinsActive, spacedWeeklyMinutesActive);
 }
 
 function togglePages(pageOne, pageTwo) {
