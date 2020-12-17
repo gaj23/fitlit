@@ -33,6 +33,10 @@ const goalReached = document.querySelector('.goal-reached');
 const minActive = document.querySelector('.min-active');
 const flightOfStairs = document.querySelector('.flight-of-stairs');
 const mileageWalked = document.querySelector('.mile-walk');
+const weeklySteps = document.querySelector('.weekly-steps');
+const weeklyStairs = document.querySelector('.weekly-stairs');
+const weeklyMinsActive = document.querySelector('.weekly-mins-active');
+
 
 const allUsers = new UserRepository(userData);
 const user = new User(allUsers.getUser(12));
