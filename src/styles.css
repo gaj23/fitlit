@@ -116,7 +116,7 @@ h6 {
   align-items: center;
 }
 
-.hydration-stats, .sleep-stats, .activity-stats, .weekly-stats {
+.hydration-stats, .sleep-stats, .activity-stats, .weekly-stats, .all-time-stats {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,7 +124,7 @@ h6 {
   overflow: scroll;
 }
 
-.weekly {
+.weekly, .all-time-stats {
   width: 100%;
 }
 
