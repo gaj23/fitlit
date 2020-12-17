@@ -11,11 +11,11 @@ class Activity {
   }
 
   findDailySteps(date, id) {
-    return this.getUserActivityData(id).find(day => day.date === date).numSteps
+    return this.getUserActivityData(id).find(day => day.date === date).numSteps;
   }
 
   findDailyFlightOfStairs(date, id) {
-    return this.getUserActivityData(id).find(day => day.date === date).flightsOfStairs
+    return this.getUserActivityData(id).find(day => day.date === date).flightsOfStairs;
   }
 
   calculateMiles(date, id) {
@@ -43,18 +43,18 @@ class Activity {
   calculateWeeklyActiveMins(date, id) {
     return Math.round(helper.getSpecificWeek(this.getUserActivityData(id), date).reduce((acc, day) => {
       return acc += day.minutesActive;
-    }, 0) / (helper.getSpecificWeek(this.getUserActivityData(id), date)).length)
+    }, 0) / (helper.getSpecificWeek(this.getUserActivityData(id), date)).length);
   }
 
   giveFeedback(date, id) {
-    const thumbsUp = String.fromCodePoint(0x1F44D)
-    const thumbsDown = String.fromCodePoint(0x1F44E)
+    const thumbsUp = String.fromCodePoint(0x1F44D);
+    const thumbsDown = String.fromCodePoint(0x1F44E);
     const user = this.userData.find(user => user.id === id);
     const daySteps = helper.getSpecificDay(this.getUserActivityData(id), date)[0].numSteps;
     if (daySteps > user.dailyStepGoal) {
-      return thumbsUp
+      return thumbsUp;
     } else {
-      return thumbsDown
+      return thumbsDown;
     }
   }
 
