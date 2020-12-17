@@ -8,29 +8,29 @@
 
 /* Header Styling */
 h1 {
-  font-size: 4rem;
+  font-size: 4vw;
   text-align: center;
   margin: 3%;
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 3.2vw;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2.5vw;
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 2vw;
   text-align: center;
   margin: 2%;
 }
 
 h5 {
-  font-size: 3rem;
+  font-size: 3vw;
   text-align: center;
-  border: 0.3rem solid grey;
+  border: 0.3vw solid grey;
   border-radius: 5%;
   width: 25%;
   margin: 2%;
@@ -40,7 +40,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1vw;
 }
 
 /* Calendar */
@@ -51,7 +51,7 @@ h6 {
 
 .detailed-calendar-style {
   background-color: #2f2f2f;
-  font-size: 2rem;
+  font-size: 2vw;
   padding: 1%;
   border: none;
 }
@@ -156,6 +156,10 @@ h6 {
   h5 {
     font-size: 1.8rem;
     width: 90%;
+  }
+
+  h6 {
+    font-size: 1rem;
   }
 
   /* Calendar */
