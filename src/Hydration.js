@@ -12,14 +12,13 @@ class Hydration {
   calculateDailyAvgIntake(id) {
     return this.getUserHydrationData(id).reduce((acc, user) => {
       acc += user.numOunces;
-      return acc
+      return acc;
     }, 0) / this.getUserHydrationData(id).length;
   }
 
   findDailyIntake(date, id) {
     return this.getUserHydrationData(id).find(day => day.date === date).numOunces;
   }
-
 
   getWeeklyIntake(date, id) {
     return helper.getSpecificWeek(this.getUserHydrationData(id), date).map(date => date.numOunces);

@@ -18,14 +18,13 @@ class SleepRepo {
   findMostHoursSlept(date) {
     const sorted = this.sleepData.filter(user => date === user.date).sort((a, b) => {
       return b.hoursSlept - a.hoursSlept;
-    })
+    });
 
     return sorted.filter(user => user.hoursSlept === sorted[0].hoursSlept).map(user => {
-      return user.userID
-    })
+      return user.userID;
+    });
   }
 }
-
 
 if (typeof module !== "undefined") {
   module.exports = SleepRepo;

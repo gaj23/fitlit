@@ -21,14 +21,14 @@ describe('UserRepository', () => {
   });
 
   it('should find a specific user', () => {
-    expect(userRepo.getUser(4)).to.equal(usersData[3])
+    expect(userRepo.getUser(4)).to.equal(usersData[3]);
   });
 
   it('should not be able to find a specific user', () => {
-    expect(userRepo.getUser(6)).to.equal(undefined)
+    expect(userRepo.getUser(6)).to.equal(undefined);
   });
 
   it('should return average step goal of all users', () => {
-    expect(userRepo.calculateAvgStepGoal()).to.equal(11600)
+    expect(userRepo.calculateAvgStepGoal()).to.equal(11600);
   });
 });

@@ -71,18 +71,18 @@ describe('Sleep', () => {
   });
 
   it('should return daily hours slept', () => {
-    expect(sleep.findDailyHrsSlept("2019/06/15", 2)).to.equal(7)
+    expect(sleep.findDailyHrsSlept("2019/06/15", 2)).to.equal(7);
   });
 
   it('should return daily sleep quality', () => {
-    expect(sleep.findDailySleepQuality("2019/06/15", 2)).to.equal(4.7)
+    expect(sleep.findDailySleepQuality("2019/06/15", 2)).to.equal(4.7);
   });
 
   it('should calculate how many hours slept each day over a given week', () => {
-    expect(sleep.calculateWeeklyHrsSlept("2019/06/15", 2)).to.deep.equal([7, 7.5, 5.7, 10.8, 9.6, 10.1, 4.3])
+    expect(sleep.calculateWeeklyHrsSlept("2019/06/15", 2)).to.deep.equal([7, 7.5, 5.7, 10.8, 9.6, 10.1, 4.3]);
   });
 
   it('should calculate sleep quallity each day over a given week', () => {
-    expect(sleep.calculateWeeklySleepQuality("2019/06/15", 2)).to.deep.equal([4.7, 3.8, 3, 3.2, 2.5, 2.4, 4.8])
+    expect(sleep.calculateWeeklySleepQuality("2019/06/15", 2)).to.deep.equal([4.7, 3.8, 3, 3.2, 2.5, 2.4, 4.8]);
   });
 });
