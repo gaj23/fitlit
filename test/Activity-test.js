@@ -24,6 +24,10 @@ describe('Activity', () => {
     expect(activity.findDailyFlightOfStairs('2019/06/15', 3)).to.equal(33);
   })
 
+  it.only('should be able to get daily active minutes for a specific user', () => {
+    expect(activity.getActiveMins('2019/06/15', 3)).to.equal(116);
+  })
+
   it('should calculate miles a user walked on a chosen day', () => {
     expect(activity.calculateMiles('2019/06/15', 3)).to.equal(6.2);
   })
