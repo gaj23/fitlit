@@ -62,6 +62,21 @@ More specifics about future work or refactoring can be found in our [GH Issues](
 
 Thank you <a href="https://github.com/cbdallavalle">Casey Dallavalle</a> and <a href="https://github.com/Elle624">Elle Li</a>
 
+#### How to Contribute
+If you are interested in contributing please:
+- clone down this repo: `https://github.com/gaj23/fitlit`
+- create a new branch: `git checkout -b your-initials/feature/feature-name`
+- contribute as you like
+- in the terminal, push the branch upstream
+- create a pull request via github
+- wait for our reply
+
+*If testing:*
+Start by installing npm with `npm install` in your terminal. Followed by uncommenting line 1 of the Class files. This line requires `helper.js` so when node is run, the Classes have access to the helper and doesn't throw any issues. __When testing is complete__ remember to comment out line 1. If it remains, it breaks our browser experience and throws errors in the console.
+This is a noted issue with no other work around.
+
+Thank you in advance for your input!
+
 ## Authors
 <table>
     <tr>
