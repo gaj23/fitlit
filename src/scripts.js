@@ -39,7 +39,7 @@ const weeklyMinsActive = document.querySelector('.weekly-mins-active');
 
 
 const allUsers = new UserRepository(userData);
-const user = new User(allUsers.getUser(12));
+const user = new User(allUsers.getUser(getRandomIndex(allUsers.usersData)));
 const hydrationStats = new Hydration(hydrationData);
 const sleepStats = new Sleep(sleepData);
 const activityStats = new Activity(activityData, userData);
@@ -54,6 +54,10 @@ sleepImg.addEventListener('click', displaySleepPage);
 sleepImgDetailed.addEventListener('click', displaySleepPage);
 activityImg.addEventListener('click', displayActivityPage);
 activityImgDetailed.addEventListener('click', displayActivityPage);
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
 
 function displaySummaryData() {
   greetUser();
@@ -72,8 +76,8 @@ function getDate() {
 }
 
 function getUserSummaryData() {
-  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
-  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
+  summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, user.id)}`;
+  summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, user.id)}`;
   stepGoalComparison.innerText = ` Your step goal is: ${user.dailyStepGoal}. Across all users the average step goal is: ${allUsers.calculateAvgStepGoal()}.`;
 }
 
@@ -91,9 +95,9 @@ function displayHydrationPage() {
 }
 
 function getHydrationPageData() {
-  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, 12)}`;
-  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(12)} oz`;
-  const weeklyIntake = hydrationStats.getWeeklyIntake(date, 12);
+  detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, user.id)}`;
+  avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(user.id)} oz`;
+  const weeklyIntake = hydrationStats.getWeeklyIntake(date, user.id);
   const spacedWeeklyIntake = weeklyIntake.join(', ');
   getWeeklyData(weeklyHydrationData, spacedWeeklyIntake);
 }
@@ -104,11 +108,11 @@ function displaySleepPage() {
 }
 
 function getSleepPageData() {
-  dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept(date, 12)}`;
-  daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, 12)}`;
-  allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(12)}`;
-  allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(12)}`;
-  const weeklyHrsSlept = sleepStats.calculateWeeklyHrsSlept(date, 12)
+  dayHoursSlept.innerText = `${sleepStats.findDailyHrsSlept(date, user.id)}`;
+  daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, user.id)}`;
+  allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(user.id)}`;
+  allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(user.id)}`;
+  const weeklyHrsSlept = sleepStats.calculateWeeklyHrsSlept(date, user.id)
   const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
   getWeeklyData(weeklyHoursSlept, spacedWeeklyHrsSlept);
 }
@@ -130,26 +134,26 @@ function getActivityPageData() {
 }
 
 function getDailyActivityPageData() {
-  dailySteps.innerText = `You: ${activityStats.findDailySteps(date, 12)} 
+  dailySteps.innerText = `You: ${activityStats.findDailySteps(date, user.id)}
   All Users Avg: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
-  goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
-  minActive.innerText = `You: ${activityStats.getActiveMins(date, 12)}
+  goalReached.innerText = `${activityStats.giveFeedback(date, user.id)}`;
+  minActive.innerText = `You: ${activityStats.getActiveMins(date, user.id)}
   All Users Avg: ${activityRepoStats.getAvgMinActiveForAllUsers(date)}`;
-  flightOfStairs.innerText = `You: ${activityStats.findDailyFlightOfStairs(date, 12)}
+  flightOfStairs.innerText = `You: ${activityStats.findDailyFlightOfStairs(date, user.id)}
   All Users Avg: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
-  mileageWalked.innerText = `${activityStats.calculateMiles(date, 12)}`
+  mileageWalked.innerText = `${activityStats.calculateMiles(date, user.id)}`
 }
 
 function getWeeklyActivityPageData() {
-  const weeklyStepsTaken = activityStats.getWeeklySteps(date, 12);
+  const weeklyStepsTaken = activityStats.getWeeklySteps(date, user.id);
   const spacedWeeklySteps = weeklyStepsTaken.join(', ');
   getWeeklyData(weeklySteps, spacedWeeklySteps);
 
-  const weeklyflightsOfStairs = activityStats.getWeeklyflightsOfStairs(date, 12);
+  const weeklyflightsOfStairs = activityStats.getWeeklyflightsOfStairs(date, user.id);
   const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
   getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
 
-  const weeklyMinutesActive = activityStats.getWeeklyMinutesActive(date, 12);
+  const weeklyMinutesActive = activityStats.getWeeklyMinutesActive(date, user.id);
   const spacedWeeklyMinutesActive = weeklyMinutesActive.join(', ');
   getWeeklyData(weeklyMinsActive, spacedWeeklyMinutesActive);
 }
