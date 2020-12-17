@@ -58,8 +58,8 @@ describe('Hydration', () => {
       date: '2019/06/23',
       numOunces: 35
     }
-  ]);
-});
+    ]);
+  });
 
   it('should calculate all time intake average', () => {
     expect(hydration.calculateDailyAvgIntake(3)).to.equal(56);
