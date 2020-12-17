@@ -33,12 +33,14 @@ class Activity {
   }
 
   giveFeedback(date, id) {
+    const thumbsUp = String.fromCodePoint(0x1F44D)
+    const thumbsDown = String.fromCodePoint(0x1F44E)
     const user = this.userData.find(user => user.id === id);
     const daySteps = helper.getSpecificDay(this.getUserActivityData(id), date)[0].numSteps;
     if (daySteps > user.dailyStepGoal) {
-      return 'Yes'
+      return thumbsUp
     } else {
-      return 'No'
+      return thumbsDown
     }
   }
 

@@ -29,6 +29,7 @@ const activityPage = document.querySelector('.activity-detailed-view-js');
 const activityImg = document.querySelector('#activity-image');
 const activityImgDetailed = document.querySelector('#activity-image-detailed');
 const dailySteps = document.querySelector('.daily-steps');
+const goalReached = document.querySelector('.goal-reached');
 
 
 const allUsers = new UserRepository(userData);
@@ -118,7 +119,12 @@ function displayActivityPage() {
 }
 
 function getActivityPageData() {
- dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} compared to all users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}.`;
+  dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} 
+  All users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
+
+  goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
+
+  
 }
 
 function togglePages(pageOne, pageTwo) {
