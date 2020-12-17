@@ -1,57 +1,84 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  /* border: 2px solid yellow; */
   color: #fff;
   background-color: #000;
   font-family: 'Open Sans', sans-serif;
 }
 
+/* Header Styling */
 h1 {
-  font-size: 5rem;
-  padding: 4%;
-}
-
-h3 {
-  font-size: 3.8rem;
-}
-
-h4 {
-  font-size: 3.2rem;
-}
-
-h5 {
-  font-size: 4.5rem;
+  font-size: 4vw;
   text-align: center;
   margin: 3%;
 }
 
-h6 {
-  font-size: 3rem;
+h2 {
+  font-size: 3.2vw;
+}
+
+h3 {
+  font-size: 2.5vw;
+}
+
+h4 {
+  font-size: 2vw;
   text-align: center;
-  border: 0.3rem solid grey;
+  margin: 2%;
+}
+
+h5 {
+  font-size: 3vw;
+  text-align: center;
+  border: 0.3vw solid grey;
   border-radius: 5%;
-  margin: 2% 2% 5% 2%;
+  width: 25%;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h6 {
+  font-size: 1.5vw;
+}
+
+/* Calendar */
+.calendar {
+  background-color: #2f2f2f;
+  text-align: center;
+}
+
+.detailed-calendar-style {
+  background-color: #2f2f2f;
+  font-size: 2vw;
+  padding: 1%;
+  border: none;
 }
 
 /* General Summary Formatting */
-.title-data {
-  padding-left: 10%;
+.summary-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .hydration-summary, .sleep-summary, .activity-summary {
-  height: 20rem;
   margin: 2%;
+  width: 33%;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
+/* Summary Images */
 .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
-  padding: 2%;
-  margin: 8%;
+  padding: 1%;
+  margin: 2%;
   border-radius: 10%;
-  width: 25%
+  width: 33%;
+  order: -1;
 }
 
 /* Hydration */
@@ -68,11 +95,11 @@ h6 {
   color: #CC79A7;
 }
 
-.sleep-summary>img, .sleep-detailed-view>img {
+.sleep-summary>img {
   background-color: #CC79A7;
 }
 
-/* Activity Summary */
+/* Activity */
 .activity-data, .detailed-activity, .detailed-activity>span {
   color: #E69F00;
 }
@@ -86,30 +113,99 @@ h6 {
   background-color: #E69F00;
 }
 
-/* Calendar */
-.calendar {
-  background-color: #2f2f2f;
-}
-
-.detailed-calendar-style {
-  background-color: #2f2f2f;
-  font-size: 4rem;
-  margin-left: 24%;
-  padding: 2%;
-  border: none;
-}
-
 /* Detailed Styling */
-.detailed-hydration, .detailed-sleep, .detailed-activity  {
+.hydration-detailed-view, .sleep-detailed-view, .activity-detailed-view, .weekly {
   display: flex;
   flex-direction: column;
-  margin: 5% 5%;
+  justify-content: center;
+  align-items: center;
 }
 
-.sleep-data {
-  margin-left: 9%;
+.hydration-stats, .sleep-stats, .activity-stats, .weekly-stats, .all-time-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.weekly, .all-time-stats {
+  width: 100%;
 }
 
 .hidden {
   display: none !important;
+}
+
+/* Mobile Display */
+@media screen and (max-width: 40rem) {
+  h1 {
+    font-size: 3.1rem;
+    margin: 0;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+    width: 90%;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  /* Calendar */
+  .detailed-calendar-style {
+    padding: 2%;
+    font-size: 2rem;
+  }
+
+  /* General Summary Formatting */
+  .summary-view {
+    display: block;
+  }
+
+  .title-data {
+    padding-left: 10%;
+  }
+
+  .hydration-summary, .sleep-summary, .activity-summary {
+    margin: 0;
+    padding: 5%;
+    width: auto;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+    padding: 2%;
+    order: 1
+  }
+
+  /* Detailed Styling */
+  .hydration-detailed-view, .sleep-detailed-view, .activity-detailed-view {
+    margin: 5%;
+    align-items: stretch;
+  }
+
+  .hydration-stats, .sleep-stats, .activity-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

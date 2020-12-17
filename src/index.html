@@ -5,6 +5,7 @@
   <meta charset="UTF-8x">
   <title>Activity Tracker</title>
   <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -12,114 +13,127 @@
   <div class="calendar">
     <input type="date" id="calendar" class="detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
   </div>
-  <section class="summary-view summary-view-js">
+  <section class="summary-view-js">
     <h1 class="greeting">Welcome, User!</h1>
-    <div class="hydration-summary">
-      <div class="title-data">
-        <h4>Hydration</h4>
-        <h3 class="hydration-data hydration-data-js">data</h3>
+    <section class="summary-view">
+      <div class="hydration-summary">
+        <div class="title-data">
+          <h3>Hydration</h3>
+          <h2 class="hydration-data hydration-data-js">data</h2>
+        </div>
+        <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
       </div>
-      <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
-    </div>
-    <div class="sleep-summary">
-      <div class="title-data">
-        <h4>Sleep</h4>
-        <h3 class="sleep-data sleep-data-js">data</h3>
+      <div class="sleep-summary">
+        <div class="title-data">
+          <h3>Sleep</h3>
+          <h2 class="sleep-data sleep-data-js">data</h2>
+        </div>
+        <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image">
       </div>
-      <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image">
-    </div>
-    <div class="activity-summary">
-      <div class="title-data">
-        <h4>Activity</h4>
-        <p class="step-goal-comparison step-goal-comparison-js">user goal compare to users goal in steps</p>
+      <div class="activity-summary">
+        <div class="title-data">
+          <h3>Activity</h3>
+          <h2 class="activity-data activity-data-js">data</h2>
+          <h6 class="step-goal-comparison">user goal compare to users goal in steps</h6>
+        </div>
+        <img src="../assets/activity.png" alt="activity icon" id="activity-image">
       </div>
-      <img src="../assets/activity.png" alt="activity icon" id="activity-image">
-    </div>
+    </section>
   </section>
 
-  <!-- detailed views below -->
-  <section class="detailed-calendar hidden">
-    <input type="date" id="day" class="detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
-  </section>
   <section class="hydration-detailed-view hydration-detailed-view-js hidden">
     <div class="hydration-summary">
-      <h5 class="hydration-data">Hydration Stats</h5>
+      <h4 class="hydration-data">Hydration Stats</h4>
       <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image-detailed">
     </div>
-    <h6>Daily Intake:
-      <span class="detailed-hydration detailed-hydration-data-js">0 oz</span>
-    </h6>
-    <h6>Intake over the last 7 days:
-      <div class="detailed-hydration weekly-intake-js">
-        <span>0</span>
-      </div>
-    </h6>
-    <h6>Every day on average you drink:
-      <span class="detailed-hydration avg-intake-js">0 oz</span>
-    </h6>
+    <section class="hydration-stats">
+      <h5>Daily Intake:
+        <span class="detailed-hydration detailed-hydration-data-js">0 oz</span>
+      </h5>
+      <h5>Intake over the last week:
+        <div class="detailed-hydration weekly-intake-js">
+          <span>0</span>
+        </div>
+      </h5>
+      <h5>Every day on average you drink:
+        <span class="detailed-hydration avg-intake-js">0 oz</span>
+      </h5>
+    </section>
   </section>
 
   <section class="sleep-detailed-view sleep-detailed-view-js hidden">
     <div class="sleep-summary">
-      <h5 class="sleep-data">Sleep Stats</h5>
+      <h4 class="sleep-data">Sleep Stats</h4>
       <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image-detailed">
     </div>
-    <h6>Hours Slept:
-      <span class="detailed-sleep day-hours-slept-js">0</span>
-    </h6>
-    <h6>Sleep Quality:
-      <span class="detailed-sleep day-sleep-quality-js">10</span>
-    </h6>
-    <h6>Hours slept over the last 7 days:
-      <div class="detailed-sleep weekly-hours-slept-js">
-        <span>0</span>
-      </div>
-    </h6>
-    <h5>All Time Averages:</h5>
-    <h6>Hours Slept:
-      <span class="detailed-sleep all-time-hours-slept-js">0</span>
-    </h6>
-    <h6>Sleep Quality:
-      <span class="detailed-sleep all-time-sleep-quality-js">10</span>
-    </h6>
+    <section class="sleep-stats">
+      <h5>Hours Slept:
+        <span class="detailed-sleep day-hours-slept-js">0</span>
+      </h5>
+      <h5>Sleep Quality:
+        <span class="detailed-sleep day-sleep-quality-js">10</span>
+      </h5>
+      <h5>Hours slept over the last week:
+        <div class="detailed-sleep weekly-hours-slept-js">
+          <span>0</span>
+        </div>
+      </h5>
+      <div class="weekly">
+        <h4>All Time Averages:</h4>
+        </weekly>
+        <section class="all-time-stats">
+          <h5>Hours Slept:
+            <span class="detailed-sleep all-time-hours-slept-js">0</span>
+          </h5>
+          <h5>Sleep Quality:
+            <span class="detailed-sleep all-time-sleep-quality-js">10</span>
+          </h5>
+        </section>
+    </section>
   </section>
 
   <section class="activity-detailed-view activity-detailed-view-js hidden">
     <div class="activity-summary">
-      <h5 class="activity-data">Activity Stats</h5>
+      <h4 class="activity-data">Activity Stats</h4>
       <img class="activity-detailed-img" src="../assets/activity.png" alt="activity icon" id="activity-image-detailed">
-    </div> 
-    <h6>Daily Steps:
-      <span class="detailed-activity daily-steps">0/all user avg</span>
-    </h6>
-    <h6>Step Goal Reached:
-      <span class="detailed-activity goal-reached">&#x1F44D</span>
-    </h6>
-    <h6>Daily Minutes Active:
-      <span class="detailed-activity min-active">0/all user avg</span>
-    </h6>
-    <h6>Daily Flight of Stairs:
-      <span class="detailed-activity flight-of-stairs">0/all user avg</span>
-    </h6>
-    <h6>Daily Mileage Walked: 
-      <span class="detailed-activity mile-walk">0</span>
-    </h6>
-    <h5>Weekly Stats</h5>
-    <h6>Step Count:
-      <div class="detailed-activity weekly-steps">
-        <span>0</span>
-      </div>
-    </h6>
-    <h6>Flights of Stairs Climbed:
-      <div class="detailed-activity weekly-stairs">
-        <span>0</span>
-      </div>
-    </h6>
-    <h6>Minutes Active:
-      <div class="detailed-activity weekly-mins-active">
-        <span>0</span>
-      </div>
-    </h6>
+    </div>
+    <section class="activity-stats">
+      <h5>Daily Steps:
+        <span class="detailed-activity daily-steps">0/all user avg</span>
+      </h5>
+      <h5>Step Goal Reached:
+        <span class="detailed-activity goal-reached">user/all user avg</span>
+      </h5>
+      <h5>Daily Minutes Active:
+        <span class="detailed-activity min-active">0/all user avg</span>
+      </h5>
+      <h5>Daily Flight of Stairs:
+        <span class="detailed-activity min-active">0/all user avg</span>
+      </h5>
+      <h5>Daily Mileage Walked:
+        <span class="detailed-activity mile-walk">0</span>
+      </h5>
+    </section>
+    <div class="weekly">
+      <h4>Weekly Stats</h4>
+    </div>
+    <section class="weekly-stats">
+      <h5>Step Count:
+        <div class="detailed-activity">
+          <span class="detailed-activity">0</span>
+        </div>
+      </h5>
+      <h5>Flights of Stairs Climbed:
+        <div class="detailed-activity">
+          <span>0</span>
+        </div>
+      </h5>
+      <h5>Minutes Active:
+        <div class="detailed-activity">
+          <span>0</span>
+        </div>
+      </h5>
+    </section>
   </section>
 
   <script type="text/javascript" src="../data/users.js"></script>
