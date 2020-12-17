@@ -11,30 +11,29 @@
 
 <body>
   <div class="calendar">
-    <input type="date" id="calendar" class="detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+    <input type="date" id="calendar" class="calendar detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
   </div>
   <section class="summary-view-js">
     <h1 class="greeting">Welcome, User!</h1>
     <section class="summary-view">
       <div class="hydration-summary">
-        <div class="title-data">
+        <div>
           <h3>Hydration</h3>
           <h2 class="hydration-data hydration-data-js">data</h2>
         </div>
         <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
       </div>
       <div class="sleep-summary">
-        <div class="title-data">
+        <div>
           <h3>Sleep</h3>
           <h2 class="sleep-data sleep-data-js">data</h2>
         </div>
         <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image">
       </div>
       <div class="activity-summary">
-        <div class="title-data">
+        <div>
           <h3>Activity</h3>
-          <h2 class="activity-data activity-data-js">data</h2>
-          <h6 class="step-goal-comparison">user goal compare to users goal in steps</h6>
+          <h6 class="activity-data activity-data-js">user goal compare to users goal in steps</h6>
         </div>
         <img src="../assets/activity.png" alt="activity icon" id="activity-image">
       </div>
@@ -50,12 +49,10 @@
       <h5>Daily Intake:
         <span class="detailed-hydration detailed-hydration-data-js">0 oz</span>
       </h5>
-      <h5>Intake over the last week:
-        <div class="detailed-hydration weekly-intake-js">
-          <span>0</span>
-        </div>
+      <h5>Weekly Intake:
+        <span class="detailed-hydration weekly-intake-js">0</span>
       </h5>
-      <h5>Every day on average you drink:
+      <h5>Average Intake:
         <span class="detailed-hydration avg-intake-js">0 oz</span>
       </h5>
     </section>
@@ -73,14 +70,11 @@
       <h5>Sleep Quality:
         <span class="detailed-sleep day-sleep-quality-js">10</span>
       </h5>
-      <h5>Hours slept over the last week:
-        <div class="detailed-sleep weekly-hours-slept-js">
-          <span>0</span>
-        </div>
+      <h5>Weekly Hours Slept:
+        <span class="detailed-sleep weekly-hours-slept-js">0</span>
       </h5>
       <div class="weekly">
         <h4>All Time Averages:</h4>
-        </weekly>
         <section class="all-time-stats">
           <h5>Hours Slept:
             <span class="detailed-sleep all-time-hours-slept-js">0</span>
@@ -95,7 +89,7 @@
   <section class="activity-detailed-view activity-detailed-view-js hidden">
     <div class="activity-summary">
       <h4 class="activity-data">Activity Stats</h4>
-      <img class="activity-detailed-img" src="../assets/activity.png" alt="activity icon" id="activity-image-detailed">
+      <img src="../assets/activity.png" alt="activity icon" id="activity-image-detailed">
     </div>
     <section class="activity-stats">
       <h5>Daily Steps:
@@ -108,7 +102,7 @@
         <span class="detailed-activity min-active">0/all user avg</span>
       </h5>
       <h5>Daily Flight of Stairs:
-        <span class="detailed-activity min-active">0/all user avg</span>
+        <span class="detailed-activity flight-of-stairs">0/all user avg</span>
       </h5>
       <h5>Daily Mileage Walked:
         <span class="detailed-activity mile-walk">0</span>
@@ -119,19 +113,13 @@
     </div>
     <section class="weekly-stats">
       <h5>Step Count:
-        <div class="detailed-activity">
-          <span class="detailed-activity">0</span>
-        </div>
+        <span class="detailed-activity weekly-steps">0</span>
       </h5>
       <h5>Flights of Stairs Climbed:
-        <div class="detailed-activity">
-          <span>0</span>
-        </div>
+        <span class="detailed-activity weekly-stairs">0</span>
       </h5>
       <h5>Minutes Active:
-        <div class="detailed-activity">
-          <span>0</span>
-        </div>
+        <span class="detailed-activity weekly-mins-active">0</span>
       </h5>
     </section>
   </section>

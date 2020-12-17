@@ -6,7 +6,7 @@ const hydrationImg = document.querySelector('#hydration-image');
 const summaryHydrationData = document.querySelector('.hydration-data-js');
 const sleepImg = document.querySelector('#sleep-image');
 const summarySleepData = document.querySelector('.sleep-data-js');
-const stepGoalComparison = document.querySelector('.step-goal-comparison-js');
+const stepGoalComparison = document.querySelector('.activity-data-js');
 
 // hydration
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
@@ -130,13 +130,13 @@ function getActivityPageData() {
 }
 
 function getDailyActivityPageData() {
-  dailySteps.innerText = ` Your steps: ${activityStats.findDailySteps(date, 12)} 
-  All users average steps: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
+  dailySteps.innerText = `You: ${activityStats.findDailySteps(date, 12)} 
+  All Users Avg: ${activityRepoStats.getAvgStepsForAllUsers(date)}`;
   goalReached.innerText = `${activityStats.giveFeedback(date, 12)}`;
-  minActive.innerText = `Your time: ${activityStats.getActiveMins(date, 12)}
-  All users average time: ${activityRepoStats.getAvgMinActiveForAllUsers(date)}`;
-  flightOfStairs.innerText = `Your flights: ${activityStats.findDailyFlightOfStairs(date, 12)}
-  All users avergae flights: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
+  minActive.innerText = `You: ${activityStats.getActiveMins(date, 12)}
+  All Users Avg: ${activityRepoStats.getAvgMinActiveForAllUsers(date)}`;
+  flightOfStairs.innerText = `You: ${activityStats.findDailyFlightOfStairs(date, 12)}
+  All Users Avg: ${activityRepoStats.getAvgStairsClimbedForAllUsers(date)}`;
   mileageWalked.innerText = `${activityStats.calculateMiles(date, 12)}`
 }
 
