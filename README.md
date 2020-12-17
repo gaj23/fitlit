@@ -1,82 +1,90 @@
-# FitLit Starter Kit
+# 🔥 Fired Up over FitLit 🔥
+---
+#### Table of Contents
+- [Introduction](#Introduction)
+- [Features](#Features)
+- [Technologies](#Techologies)
+- [Reflections](#Reflections)
+- [Contributions](#Contributions)
+- [Authors](#Authors)
+---
+## Introduction
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+Designed with desktop and mobile viewing in mind, our variation of FitLit provides a simplicity of design that doesn't interfere with user data display.
 
-## Setup
+This project was set forth by Turing School of Software and Design with specific parameters to be met. The current iteration (as of 2020/12/17) fulfills up to iteration 4 as outlined in the [rubric](https://frontend.turing.io/projects/fitlit.html). Our team paid close attention to responsive design, thorough testing, DRY SRP coding by utilizing an additional helper file.
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `open src/index.html` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+## Features
+Visit our site [here](https://gaj23.github.io/fitlit/) to iteract with our creation!
+- [Date Selection](#Date-Selection)
 
-## Testing
+- [Icon Interaction](#Icon-Interaction)
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+### Date Selection
+Choose any date and we'll display the data in relation to your selection!
+##### Mobile
+<img src="https://media.giphy.com/media/R9LqtyD4y4D2LsVWiB/giphy.gif">
 
-## Linting Your Code
+##### Desktop
+<img src="https://media.giphy.com/media/P97psezJ3OOc44DNMk/giphy.gif">
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+### Icon Interaction
+Depending on what icon you choose will result in different details of data being shown!
+##### Mobile
+<img src="https://media.giphy.com/media/A3rm9A0BzZs2zlBckQ/giphy.gif">
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+##### Desktop
+<img src="https://media.giphy.com/media/yCU2kOyvbAm5Z6mnYf/giphy.gif">
 
-## Data Model
+## Technologies
+- HTML
+- CSS
+- JS
+- ESlint
+- Node for testing
+- [Flat Icon](https://www.flaticon.com/) for icons
+- WAVE
+- [Miro](https://miro.com/app/board/o9J_lcUjW6U=/) for planning & wireframing
 
-**Users**
+## Reflections
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+### Team Work
+For this project, both of us expressed how we felt our communication was clear and often. This allowed for us to feel comfortable divving up responsibilities to manage the time difference that existed between us. Additionally, if any problems arose or questions arose, there was no hesitiation to reach out.
 
-**Activity**
+### Future Iterations
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+More specifics about future work or refactoring can be found in our [GH Issues](https://github.com/gaj23/fitlit/issues) page, but in general:
+- Implement [Chart.js](https://www.npmjs.com/package/chart.js) for easier to read weekly data display
+- Add in a friend view for a user.
+- Drag and drop widgets depending on a user's preference.
 
-**Hydration**
+## Contributions
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
+Thank you <a href="https://github.com/cbdallavalle">Casey Dallavalle</a> and <a href="https://github.com/Elle624">Elle Li</a>
 
-**Sleep**
+#### How to Contribute
+If you are interested in contributing please:
+- clone down this repo: `https://github.com/gaj23/fitlit`
+- create a new branch: `git checkout -b your-initials/feature/feature-name`
+- contribute as you like
+- in the terminal, push the branch upstream
+- create a pull request via github
+- wait for our reply
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+*If testing:*
+Start by installing npm with `npm install` in your terminal. Followed by uncommenting line 1 of the Class files. This line requires `helper.js` so when node is run, the Classes have access to the helper and doesn't throw any issues. __When testing is complete__ remember to comment out line 1. If it remains, it breaks our browser experience and throws errors in the console.
+This is a noted issue with no other work around.
+
+Thank you in advance for your input!
+
+## Authors
+<table>
+    <tr>
+        <td> Thao Ma <a href="https://github.com/thaomonster">GH</td>
+        <td> Gabrielle Joyce <a href="https://github.com/gaj23">GH</td>
+    </tr>
+<td><img src="https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4" alt="Ms. Turtle"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars1.githubusercontent.com/u/68332132?s=460&u=a54dd9d3eede7c5ae0704846c510001c89dc88f7&v=4" alt="Ms. Joyce"
+ width="150" height="auto" /></td>
+</table>
