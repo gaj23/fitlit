@@ -11,29 +11,29 @@
 
 <body>
   <div class="calendar">
-    <input type="date" id="calendar" class="detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
+    <input type="date" id="calendar" class="calendar detailed-calendar-style" name="calendar" value="2019-06-15" min="2019-06-15" max="2019-09-22">
   </div>
   <section class="summary-view-js">
     <h1 class="greeting">Welcome, User!</h1>
     <section class="summary-view">
       <div class="hydration-summary">
-        <div class="title-data">
+        <div>
           <h3>Hydration</h3>
           <h2 class="hydration-data hydration-data-js">data</h2>
         </div>
         <img src="../assets/hydration.png" alt="hydration icon" id="hydration-image">
       </div>
       <div class="sleep-summary">
-        <div class="title-data">
+        <div>
           <h3>Sleep</h3>
           <h2 class="sleep-data sleep-data-js">data</h2>
         </div>
         <img src="../assets/sleep.png" alt="sleep icon" id="sleep-image">
       </div>
       <div class="activity-summary">
-        <div class="title-data">
+        <div>
           <h3>Activity</h3>
-          <h6 class="step-goal-comparison">user goal compare to users goal in steps</h6>
+          <h6 class="activity-data activity-data-js">user goal compare to users goal in steps</h6>
         </div>
         <img src="../assets/activity.png" alt="activity icon" id="activity-image">
       </div>
@@ -49,12 +49,10 @@
       <h5>Daily Intake:
         <span class="detailed-hydration detailed-hydration-data-js">0 oz</span>
       </h5>
-      <h5>Intake over the last week:
-        <div class="detailed-hydration weekly-intake-js">
-          <span>0</span>
-        </div>
+      <h5>Weekly Intake:
+        <span class="detailed-hydration weekly-intake-js">0</span>
       </h5>
-      <h5>Every day on average you drink:
+      <h5>Average Intake:
         <span class="detailed-hydration avg-intake-js">0 oz</span>
       </h5>
     </section>
@@ -73,9 +71,7 @@
         <span class="detailed-sleep day-sleep-quality-js">10</span>
       </h5>
       <h5>Hours slept over the last week:
-        <div class="detailed-sleep weekly-hours-slept-js">
-          <span>0</span>
-        </div>
+        <span class="detailed-sleep weekly-hours-slept-js">0</span>
       </h5>
       <div class="weekly">
         <h4>All Time Averages:</h4>

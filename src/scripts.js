@@ -6,7 +6,7 @@ const hydrationImg = document.querySelector('#hydration-image');
 const summaryHydrationData = document.querySelector('.hydration-data-js');
 const sleepImg = document.querySelector('#sleep-image');
 const summarySleepData = document.querySelector('.sleep-data-js');
-const stepGoalComparison = document.querySelector('.step-goal-comparison');
+const stepGoalComparison = document.querySelector('.activity-data-js');
 
 // hydration
 const hydrationPage = document.querySelector('.hydration-detailed-view-js');
