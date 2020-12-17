@@ -38,11 +38,16 @@ h6 {
 }
 
 /* General Summary Formatting */
+.summary-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .hydration-summary, .sleep-summary, .activity-summary {
   margin: 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 33%;
+  text-align: center;
 }
 
 /* Hydration */
@@ -59,7 +64,7 @@ h6 {
   color: #CC79A7;
 }
 
-.sleep-summary>img, .sleep-detailed-view>img {
+.sleep-summary>img {
   background-color: #CC79A7;
 }
 
@@ -72,11 +77,12 @@ h6 {
   background-color: #E69F00;
 }
 
+/* summary images */
 .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
-  padding: 2%;
-  margin: 8%;
+  padding: 1%;
+  margin: 2%;
   border-radius: 10%;
-  width: 25%
+  width: 33%
 }
 
 h4 {
@@ -100,14 +106,14 @@ h5 {
 /* Mobile Display */
 @media screen and (max-width: 41rem) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 3.1rem;
     text-align: left;
     padding-left: 4%;
     padding-right: 4%;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   h3 {
@@ -132,11 +138,24 @@ h5 {
     padding-left: 10%;
   }
 
+  .summary-view {
+    display: block;
+  }
+
   .hydration-summary, .sleep-summary, .activity-summary {
-    margin: 2%;
+    margin: 0;
+    text-align: left;
+    width: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+  }
+
+  .hydration-summary>img, .sleep-summary>img, .activity-summary>img {
+    padding: 2%;
+    margin: 8%;
+    border-radius: 10%;
+    width: 25%
   }
 
   /* Detailed Styling */
