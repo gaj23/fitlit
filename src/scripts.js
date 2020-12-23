@@ -68,13 +68,6 @@ function greetUser() {
   userName.innerText = `Welcome, ${user.returnFirstName()}!`;
 }
 
-function getDate() {
-  const newDate = calendar.value;
-  let dataDate = newDate.replace('-', '/');
-  dataDate = dataDate.replace('-', '/');
-  return date = dataDate;
-}
-
 function getUserSummaryData() {
   summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, user.id)}`;
   summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, user.id)}`;
@@ -97,9 +90,7 @@ function displayHydrationPage() {
 function getHydrationPageData() {
   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, user.id)}`;
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(user.id)} oz`;
-  const weeklyIntake = hydrationStats.getWeeklyIntake(date, user.id);
-  const spacedWeeklyIntake = weeklyIntake.join(', ');
-  getWeeklyData(weeklyHydrationData, spacedWeeklyIntake);
+  getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake(date, user.id));
 }
 
 function displaySleepPage() {
@@ -113,13 +104,6 @@ function getSleepPageData() {
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(user.id)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(user.id)}`;
   getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept(date, user.id));
-}
-
-function getWeeklyData(selector, weekly) {
-  selector.innerHTML = weekly.map(day => {
-    return `<span>${day}</span>`
-
-  }).join('');
 }
 
 function displayActivityPage() {
@@ -147,6 +131,20 @@ function getWeeklyActivityPageData() {
   getWeeklyData(weeklySteps, activityStats.getWeeklySteps(date, user.id));
   getWeeklyData(weeklyStairs, activityStats.getWeeklyflightsOfStairs(date, user.id));
   getWeeklyData(weeklyMinsActive, activityStats.getWeeklyMinutesActive(date, user.id));
+}
+
+function getWeeklyData(selector, weekly) {
+  selector.innerHTML = weekly.map(day => {
+    return `<span>${day}</span>`
+
+  }).join('');
+}
+
+function getDate() {
+  const newDate = calendar.value;
+  let dataDate = newDate.replace('-', '/');
+  dataDate = dataDate.replace('-', '/');
+  return date = dataDate;
 }
 
 function togglePages(pageOne, pageTwo) {
