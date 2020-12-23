@@ -112,20 +112,9 @@ function getSleepPageData() {
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, user.id)}`;
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(user.id)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(user.id)}`;
-  // const weeklyHrsSleptData = sleepStats.calculateWeeklyHrsSlept(date, user.id)
-  // const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
   getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept(date, user.id));
 }
 
-//I have an array of numbers
-//I want to then make it acceptable/readable for innerHTML
-//day -> number data type
-//number need to be stringed?
-//map returns an array
-//but innerHTML wants a string
-//["<span>0</span>", <span>1</span>]
-//'[''<span>0</span>'']'
-//json, makes entire array and everything inside of the array;
 function getWeeklyData(selector, weekly) {
   selector.innerHTML = weekly.map(day => {
     return `<span>${day}</span>`
@@ -155,17 +144,9 @@ function getDailyActivityPageData() {
 }
 
 function getWeeklyActivityPageData() {
-  const weeklyStepsTaken = activityStats.getWeeklySteps(date, user.id);
-  const spacedWeeklySteps = weeklyStepsTaken.join(', ');
-  getWeeklyData(weeklySteps, spacedWeeklySteps);
-
-  const weeklyflightsOfStairs = activityStats.getWeeklyflightsOfStairs(date, user.id);
-  const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
-  getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
-
-  const weeklyMinutesActive = activityStats.getWeeklyMinutesActive(date, user.id);
-  const spacedWeeklyMinutesActive = weeklyMinutesActive.join(', ');
-  getWeeklyData(weeklyMinsActive, spacedWeeklyMinutesActive);
+  getWeeklyData(weeklySteps, activityStats.getWeeklySteps(date, user.id));
+  getWeeklyData(weeklyStairs, activityStats.getWeeklyflightsOfStairs(date, user.id));
+  getWeeklyData(weeklyMinsActive, activityStats.getWeeklyMinutesActive(date, user.id));
 }
 
 function togglePages(pageOne, pageTwo) {
