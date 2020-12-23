@@ -135,7 +135,7 @@ function getWeeklyActivityPageData() {
 
 function getWeeklyData(selector, weekly) {
   selector.innerHTML = weekly.map(day => {
-    return `<span>${day}</span>`
+    return `<div>${day}</div>`
 
   }).join('');
 }
