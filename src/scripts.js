@@ -112,15 +112,25 @@ function getSleepPageData() {
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, user.id)}`;
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(user.id)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(user.id)}`;
-  const weeklyHrsSlept = sleepStats.calculateWeeklyHrsSlept(date, user.id)
-  const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
-  getWeeklyData(weeklyHoursSlept, spacedWeeklyHrsSlept);
+  // const weeklyHrsSleptData = sleepStats.calculateWeeklyHrsSlept(date, user.id)
+  // const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
+  getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept(date, user.id));
 }
 
-function getWeeklyData(selector, method) {
-  selector.innerHTML = `
-<span>${method}</span>
-`;
+//I have an array of numbers
+//I want to then make it acceptable/readable for innerHTML
+//day -> number data type
+//number need to be stringed?
+//map returns an array
+//but innerHTML wants a string
+//["<span>0</span>", <span>1</span>]
+//'[''<span>0</span>'']'
+//json, makes entire array and everything inside of the array;
+function getWeeklyData(selector, weekly) {
+  selector.innerHTML = weekly.map(day => {
+    return `<span>${day}</span>`
+
+  }).join('');
 }
 
 function displayActivityPage() {
