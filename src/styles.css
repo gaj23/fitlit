@@ -82,7 +82,7 @@ h6 {
 }
 
 /* Hydration */
-.hydration-data, .detailed-hydration, .detailed-hydration>span {
+.hydration-data, .detailed-hydration, .detailed-hydration>div {
   color: #56B4E9;
 }
 
@@ -91,7 +91,7 @@ h6 {
 }
 
 /* Sleep */
-.sleep-data, .detailed-sleep, .detailed-sleep>span {
+.sleep-data, .detailed-sleep, .detailed-sleep>div {
   color: #CC79A7;
 }
 
@@ -100,7 +100,7 @@ h6 {
 }
 
 /* Activity */
-.activity-data, .detailed-activity, .detailed-activity>span {
+.activity-data, .detailed-activity, .detailed-activity>div {
   color: #E69F00;
 }
 

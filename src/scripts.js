@@ -68,13 +68,6 @@ function greetUser() {
   userName.innerText = `Welcome, ${user.returnFirstName()}!`;
 }
 
-function getDate() {
-  const newDate = calendar.value;
-  let dataDate = newDate.replace('-', '/');
-  dataDate = dataDate.replace('-', '/');
-  return date = dataDate;
-}
-
 function getUserSummaryData() {
   summaryHydrationData.innerText = `${hydrationStats.findDailyIntake(date, user.id)}`;
   summarySleepData.innerText = `${sleepStats.findDailyHrsSlept(date, user.id)}`;
@@ -97,9 +90,7 @@ function displayHydrationPage() {
 function getHydrationPageData() {
   detailedHydrationData.innerText = `${hydrationStats.findDailyIntake(date, user.id)}`;
   avgHydrationIntakeData.innerText = `${hydrationStats.calculateDailyAvgIntake(user.id)} oz`;
-  const weeklyIntake = hydrationStats.getWeeklyIntake(date, user.id);
-  const spacedWeeklyIntake = weeklyIntake.join(', ');
-  getWeeklyData(weeklyHydrationData, spacedWeeklyIntake);
+  getWeeklyData(weeklyHydrationData, hydrationStats.getWeeklyIntake(date, user.id));
 }
 
 function displaySleepPage() {
@@ -112,15 +103,7 @@ function getSleepPageData() {
   daySleepQuality.innerText = `${sleepStats.findDailySleepQuality(date, user.id)}`;
   allTimeHoursSlept.innerText = `${sleepStats.calculateDailyAvgHoursSlept(user.id)}`;
   allTimeSleepQuality.innerText = `${sleepStats.calculateDailyAvgSleepQuality(user.id)}`;
-  const weeklyHrsSlept = sleepStats.calculateWeeklyHrsSlept(date, user.id)
-  const spacedWeeklyHrsSlept = weeklyHrsSlept.join(', ')
-  getWeeklyData(weeklyHoursSlept, spacedWeeklyHrsSlept);
-}
-
-function getWeeklyData(selector, method) {
-  selector.innerHTML = `
-<span>${method}</span>
-`;
+  getWeeklyData(weeklyHoursSlept, sleepStats.calculateWeeklyHrsSlept(date, user.id));
 }
 
 function displayActivityPage() {
@@ -145,17 +128,23 @@ function getDailyActivityPageData() {
 }
 
 function getWeeklyActivityPageData() {
-  const weeklyStepsTaken = activityStats.getWeeklySteps(date, user.id);
-  const spacedWeeklySteps = weeklyStepsTaken.join(', ');
-  getWeeklyData(weeklySteps, spacedWeeklySteps);
+  getWeeklyData(weeklySteps, activityStats.getWeeklySteps(date, user.id));
+  getWeeklyData(weeklyStairs, activityStats.getWeeklyflightsOfStairs(date, user.id));
+  getWeeklyData(weeklyMinsActive, activityStats.getWeeklyMinutesActive(date, user.id));
+}
 
-  const weeklyflightsOfStairs = activityStats.getWeeklyflightsOfStairs(date, user.id);
-  const spacedWeeklyflightsOfStairs = weeklyflightsOfStairs.join(', ');
-  getWeeklyData(weeklyStairs, spacedWeeklyflightsOfStairs);
+function getWeeklyData(selector, weekly) {
+  selector.innerHTML = weekly.map(day => {
+    return `<div>${day}</div>`
 
-  const weeklyMinutesActive = activityStats.getWeeklyMinutesActive(date, user.id);
-  const spacedWeeklyMinutesActive = weeklyMinutesActive.join(', ');
-  getWeeklyData(weeklyMinsActive, spacedWeeklyMinutesActive);
+  }).join('');
+}
+
+function getDate() {
+  const newDate = calendar.value;
+  let dataDate = newDate.replace('-', '/');
+  dataDate = dataDate.replace('-', '/');
+  return date = dataDate;
 }
 
 function togglePages(pageOne, pageTwo) {
